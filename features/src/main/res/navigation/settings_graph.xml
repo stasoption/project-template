@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/settings_graph"
+    app:startDestination="@+id/menu">
+
+    <fragment
+        android:id="@+id/menu"
+        android:name="com.averin.android.developer.settings.presentation.MenuFragment"
+        tools:layout="@layout/fr_menu" />
+</navigation>

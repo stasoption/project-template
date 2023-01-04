@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="template_short_text">Lorem Ipsum</string>
+    <string name="template_middle_text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</string>
+    <string name="template_long_text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</string>
+
+    <!-- examples start -->
+    <string name="example_menu_double_action">Double action dialog</string>
+    <string name="example_menu_single_action">Single action dialog</string>
+    <string name="example_menu_simple_dialog">Simple message dialog</string>
+    <string name="example_menu_warning_dialog">Warning dialog</string>
+    <string name="example_menu_full_screen_message">Full screen message dialog</string>
+    <string name="tab_fields">Fields</string>
+    <string name="tab_buttons">Buttons</string>
+    <!-- examples end -->
+
+    <!-- errors start -->
+    <string name="error_network">No connection</string>
+    <string name="no_internet">No internet</string>
+    <string name="ssl_untrusted" translatable="false">The certificate authority is not trusted.</string>
+    <string name="ssl_expired" translatable="false">The certificate has expired.</string>
+    <string name="ssl_idmismatch" translatable="false">The certificate Hostname mismatch.</string>
+    <string name="ssl_notyetvalid" translatable="false">The certificate is not yet valid.</string>
+    <string name="certificate_error" translatable="false">SSL Certificate Error</string>
+    <!-- errors end -->
+
+    <!-- field validation start -->
+    <string name="field_is_required">Required field</string>
+    <string name="invalid_email_error">Invalid email address</string>
+    <string name="invalid_password">Invalid password</string>
+    <!-- field validation end -->
+
+    <!-- common start -->
+    <string name="empty_string">""</string>
+    <string name="btn_ok">ОК</string>
+    <string name="btn_cancel">Cancel</string>
+    <string name="try_again">Try again</string>
+    <string name="back">Back</string>
+    <string name="cancell">Cancel</string>
+    <string name="today">Today</string>
+    <string name="yesterday">Yesterday</string>
+    <string name="photo">Photo</string>
+    <string name="password">Password</string>
+    <string name="search">Search</string>
+    <string name="delete">Delete</string>
+    <string name="change">Change</string>
+    <string name="continue_action">Continue</string>
+    <string name="no_action">No</string>
+    <string name="yes_action">Yes</string>
+    <string name="no_cancel">No, cancel</string>
+    <string name="yes_delete">Yes, delete</string>
+    <string name="symbols_counter">%1$d/%2$d</string>
+    <!-- common end -->
+
+    <!-- fields hints start -->
+    <string name="hint_email">username</string>
+    <string name="hint_your_password">password</string>
+    <string name="hint_salary_from">1,000</string>
+    <string name="show_more">Show more</string>
+    <string name="collapse">Show less</string>
+    <!-- fields hints end -->
+
+    <!-- navigation panel start -->
+    <string name="tab_projects">Projects</string>
+    <string name="tab_widgets">Widgets</string>
+    <string name="tab_compouse">Compouse</string>
+    <string name="tab_4">Empty</string>
+    <string name="tab_menu">More</string>
+    <!-- navigation panel end -->
+
+    <!-- Login start -->
+    <string name="login_email_hint">username</string>
+    <string name="login">Sign in</string>
+    <!-- Login end -->
+
+    <!-- Candidate start -->
+    <string name="select_from_list">Add more from the list below</string>
+    <string name="add_new">Add more from the list below</string>
+    <string name="assign_to_vacancy">Assign to vacancy</string>
+    <!-- Candidate end -->
+
+    <!-- Cloud start -->
+    <string name="time_sec_left">%s sec left</string>
+    <string name="time_left">%s left</string>
+    <string name="file_has_been_downloading">File has been downloading…</string>
+    <!-- Cloud end -->
+
+    <!-- Menu start -->
+    <string name="menu_item_logout">Log out</string>
+    <string name="ask_for_logout">Are you sure you want to log out?</string>
+    <!-- Menu end -->
+</resources>

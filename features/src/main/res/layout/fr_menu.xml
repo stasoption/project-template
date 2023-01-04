@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/window_background">
+
+    <TextView
+        android:id="@+id/tvSettingTitle"
+        style="@style/CustomToolbarText"
+        android:layout_marginStart="@dimen/margin_medium"
+        android:layout_marginEnd="@dimen/margin_medium"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/size_56"
+        android:gravity="center_vertical"
+        android:includeFontPadding="false"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/tab_menu"/>
+
+    <ImageView
+        android:id="@+id/ivAvatar"
+        android:layout_width="@dimen/avatar_width"
+        android:layout_height="@dimen/avatar_height"
+        app:layout_constraintTop_toBottomOf="@+id/tvSettingTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:src="@drawable/ic_avatar_placeholder"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/tvUserName"
+        style="@style/MainTitle"
+        android:layout_marginTop="@dimen/margin_medium"
+        app:layout_constraintStart_toStartOf="@+id/ivAvatar"
+        app:layout_constraintEnd_toEndOf="@+id/ivAvatar"
+        app:layout_constraintTop_toBottomOf="@+id/ivAvatar"
+        tools:text="Ralph Edwards"/>
+
+    <TextView
+        android:id="@+id/tvLogout"
+        style="@style/MenuItem"
+        android:text="@string/menu_item_logout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:drawableStartCompat="@drawable/ic_menu_logout"
+        tools:drawableStart="@drawable/ic_menu_logout" />
+
+    <include
+        android:id="@+id/loadingView"
+        layout="@layout/w_loading_view" />
+
+    <include
+        android:id="@+id/errorInfoView"
+        layout="@layout/base_error_view" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

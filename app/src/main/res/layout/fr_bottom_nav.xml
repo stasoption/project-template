@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/window_background">
+
+    <FrameLayout
+        android:id="@+id/bottomNavContainer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"/>
+
+    <com.averin.android.developer.app.navigation.bottom.presentation.CustomBottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_gravity="bottom"
+        app:navIcon1="@drawable/ic_tab_vacancy_default"
+        app:navTitle1="@string/tab_projects"
+        app:navIcon2="@drawable/ic_tab_candidates_default"
+        app:navTitle2="@string/tab_widgets"
+        app:navIcon3="@drawable/ic_tab_feed_default"
+        app:navTitle3="@string/tab_compouse"
+        app:navIcon4="@drawable/ic_tab_chat_default"
+        app:navTitle4="@string/tab_4"
+        app:navIcon5="@drawable/ic_tab_more_default"
+        app:navTitle5="@string/tab_menu"/>
+
+    <include
+        android:id="@+id/loadingView"
+        layout="@layout/w_loading_view" />
+
+    <include
+        android:id="@+id/errorInfoView"
+        layout="@layout/base_error_view" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

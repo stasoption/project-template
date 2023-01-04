@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:parentTag="android.widget.FrameLayout">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/margin_4"
+        android:background="@drawable/bg_segmented_view">
+
+        <TextView
+            android:id="@+id/tvLeftBtn"
+            style="@style/CustomSegmentedTab"
+            android:layout_marginEnd="@dimen/margin_4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/tvCentralBtn"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:text="Tab 1"
+            tools:textColor="@color/textColorPrimary"
+            tools:background="@drawable/bg_segmented_active"/>
+
+        <TextView
+            android:id="@+id/tvCentralBtn"
+            style="@style/CustomSegmentedTab"
+            app:layout_constraintStart_toEndOf="@+id/tvLeftBtn"
+            app:layout_constraintEnd_toStartOf="@+id/tvRightBtn"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:text="Tab 2"
+            tools:textColor="@color/textColorPrimary"
+            tools:background="@drawable/bg_segmented_inactive"/>
+
+        <TextView
+            android:id="@+id/tvRightBtn"
+            style="@style/CustomSegmentedTab"
+            android:layout_marginStart="@dimen/margin_4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tvCentralBtn"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:text="Tab 3"
+            tools:textColor="@color/gray"
+            tools:background="@drawable/bg_segmented_inactive"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</merge>

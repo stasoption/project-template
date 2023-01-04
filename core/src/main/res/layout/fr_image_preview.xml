@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <View
+        android:id="@+id/dialogHolder"
+        android:layout_width="@dimen/size_40"
+        android:layout_height="@dimen/size_4"
+        android:layout_marginTop="@dimen/margin_small"
+        android:background="@drawable/bg_dialog_holder"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/tvCountryTitle"
+        style="@style/TextSecondary"
+        android:layout_width="wrap_content"
+        android:text="@string/photo"
+        android:textColor="@color/typography_title"
+        android:textSize="@dimen/text_16"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btnClose"
+        app:layout_constraintBottom_toBottomOf="@+id/btnClose"/>
+
+    <ImageView
+        android:id="@+id/btnClose"
+        style="@style/ImageButton"
+        android:src="@drawable/ic_clear"
+        android:layout_marginEnd="@dimen/margin_medium"
+        android:layout_marginTop="@dimen/margin_medium"
+        app:layout_constraintTop_toBottomOf="@+id/dialogHolder"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="ContentDescription" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="tvCountryTitle,btnClose"/>
+
+    <ImageView
+        android:id="@+id/ivImagePreview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:src="@drawable/image_placeholder"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/centerHorizontal"
+        app:layout_constraintBottom_toBottomOf="@+id/centerHorizontal"/>
+
+    <ProgressBar
+        android:id="@+id/imageLoader"
+        android:layout_width="@dimen/size_24"
+        android:layout_height="@dimen/size_24"
+        android:visibility="visible"
+        android:indeterminateTint="@color/colorAccent"
+        app:layout_constraintTop_toTopOf="@+id/ivImagePreview"
+        app:layout_constraintBottom_toBottomOf="@+id/ivImagePreview"
+        app:layout_constraintStart_toStartOf="@+id/ivImagePreview"
+        app:layout_constraintEnd_toEndOf="@+id/ivImagePreview"/>
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/centerHorizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.45"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

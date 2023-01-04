@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Averin</string>
+    <string name="empty_desc">""</string>
+    <!-- Notification -->
+    <string name="notification_channel_name">Averin Notification Channel</string>
+    <string name="notification_channel_description">Averin Notification Description</string>
+
+</resources>

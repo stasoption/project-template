@@ -1,0 +1,39 @@
+apply plugin: Plugins.androidLibrary
+
+apply from: '../config/config-android.gradle'
+apply from: '../config/config-ui-android.gradle'
+apply from: '../config/dependency-groups.gradle'
+
+android {
+    defaultConfig {
+        buildConfigField 'int', 'PREFERENCES_VERSION', '1'
+        buildConfigField 'String', 'KEY_AUTH_LOGIN_TOKEN', '"KEY_AUTH_LOGIN_TOKEN"'
+        buildConfigField 'String', 'VERSION_NAME', "\"${ rootProject.getVersionName() }\""
+        multiDexEnabled = true
+    }
+
+    aaptOptions {
+        cruncherEnabled = false
+    }
+}
+
+dependencies {
+    dependencyNetworkAll()
+    dependencyMiscDateTime()
+    dependencyKotlinAll()
+    dependencyDiMain()
+    dependencyAndroidXCore()
+    dependencyAndroidXExif()
+    dependencyAndroidXPreferences()
+    dependencyJsonMoshi()
+    dependencyMiscTimber()
+    dependencyAndroidXUi()
+    dependencyAndroidXNavigation()
+    dependencyAndroidXCustomTabs()
+    dependencyMiscDelegates()
+    dependencyTestsAll()
+    dependencyGlide()
+    dependencyKeyboardListener()
+    dependencyInputMask()
+    dependencyChart()
+}

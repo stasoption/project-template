@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:parentTag="android.widget.FrameLayout">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/ltToolbarPanel"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size_56"
+        android:paddingEnd="@dimen/margin_medium"
+        app:layout_constraintTop_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <ImageView
+            android:id="@+id/ivBack"
+            style="@style/ImageButton"
+            android:src="@drawable/ic_back"
+            app:tint="@color/textToolbar"
+            android:clickable="false"
+            android:focusable="false"
+            android:padding="@dimen/margin_2"
+            android:layout_marginStart="@dimen/margin_medium"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvScreenName"
+            app:layout_constraintBottom_toBottomOf="@+id/tvScreenName"
+            app:layout_constraintEnd_toStartOf="@+id/tvScreenName"
+            tools:ignore="ContentDescription"
+            tools:tint="@color/textToolbar"/>
+
+        <View
+            android:id="@+id/vBackClickableArea"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:clickable="true"
+            android:focusable="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/tvScreenName"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/tvScreenName"
+            style="@style/CustomToolbarText"
+            android:includeFontPadding="false"
+            app:layout_goneMarginEnd="0dp"
+            app:layout_constraintStart_toEndOf="@+id/ivBack"
+            app:layout_constraintEnd_toStartOf="@+id/ivAction3"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@string/template_middle_text"/>
+
+        <ImageView
+            android:id="@+id/ivAction3"
+            style="@style/ImageButton"
+            android:src="@drawable/ic_debug_placeholder"
+            android:visibility="gone"
+            android:layout_marginEnd="@dimen/margin_medium"
+            app:layout_goneMarginEnd="0dp"
+            app:layout_constraintStart_toEndOf="@+id/tvScreenName"
+            app:layout_constraintEnd_toStartOf="@+id/ivAction2"
+            app:layout_constraintTop_toTopOf="@+id/tvScreenName"
+            app:layout_constraintBottom_toBottomOf="@+id/tvScreenName"
+            tools:ignore="ContentDescription"
+            tools:tint="@color/gray"/>
+
+        <ImageView
+            android:id="@+id/ivAction2"
+            style="@style/ImageButton"
+            android:src="@drawable/ic_debug_placeholder"
+            android:visibility="gone"
+            android:layout_marginEnd="@dimen/margin_medium"
+            app:layout_goneMarginEnd="0dp"
+            app:layout_constraintStart_toEndOf="@+id/ivAction3"
+            app:layout_constraintEnd_toStartOf="@+id/ivAction1"
+            app:layout_constraintTop_toTopOf="@+id/tvScreenName"
+            app:layout_constraintBottom_toBottomOf="@+id/tvScreenName"
+            tools:ignore="ContentDescription"/>
+
+        <ImageView
+            android:id="@+id/ivAction1"
+            style="@style/ImageButton"
+            android:src="@drawable/ic_debug_placeholder"
+            android:visibility="gone"
+            android:layout_marginEnd="@dimen/margin_medium"
+            app:layout_goneMarginEnd="0dp"
+            app:layout_constraintStart_toEndOf="@+id/ivAction2"
+            app:layout_constraintTop_toTopOf="@+id/tvScreenName"
+            app:layout_constraintBottom_toBottomOf="@+id/tvScreenName"
+            app:layout_constraintEnd_toStartOf="@+id/tvActionLink"
+            tools:ignore="ContentDescription"/>
+
+        <TextView
+            android:id="@+id/tvActionLink"
+            style="@style/TextButton"
+            android:src="@drawable/ic_debug_placeholder"
+            android:visibility="gone"
+            app:layout_constraintStart_toEndOf="@+id/ivAction1"
+            app:layout_constraintTop_toTopOf="@+id/tvScreenName"
+            app:layout_constraintBottom_toBottomOf="@+id/tvScreenName"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="Link"
+            tools:ignore="ContentDescription" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</merge>

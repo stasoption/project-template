@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="InfoView">
+        <attr name="icon" format="reference" />
+        <attr name="titleText" format="string" />
+        <attr name="buttonText" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="CustomBottomNavigationView">
+        <attr name="navIcon1" format="integer"/>
+        <attr name="navTitle1" format="string"/>
+        <attr name="navIcon2" format="integer"/>
+        <attr name="navTitle2" format="string"/>
+        <attr name="navIcon3" format="integer"/>
+        <attr name="navTitle3" format="string"/>
+        <attr name="navIcon4" format="integer"/>
+        <attr name="navTitle4" format="string"/>
+        <attr name="navIcon5" format="integer"/>
+        <attr name="navTitle5" format="string"/>
+    </declare-styleable>
+
+    <declare-styleable name="CustomSearchToolbar">
+        <attr name="searchPanelTitle" format="string"/>
+        <attr name="searchPanelHint" format="string"/>
+    </declare-styleable>
+
+    <declare-styleable name="CustomToolbar">
+        <attr name="cptTitle" format="string"/>
+        <attr name="cptLink" format="string"/>
+    </declare-styleable>
+
+    <declare-styleable name="CustomButton">
+        <attr name="cpbText" format="string" />
+        <attr name="cpbIcon" format="integer"/>
+        <attr name="cpbType" format="enum">
+            <enum name="primary" value="0" />
+            <enum name="secondary" value="1" />
+            <enum name="warning" value="2" />
+        </attr>
+        <attr name="isButtonEnabled" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="CandidateEmotionsChart">
+        <attr name="chartTextColorX" format="color" />
+        <attr name="chartTextColorY" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="ExpandedTextView">
+        <attr name="etvText" format="string" />
+        <attr name="isExpanded" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="CustomInputView">
+        <attr name="cpiTextMaxLength" format="integer"/>
+        <attr name="cpiLabel" format="string"/>
+        <attr name="cpiText" format="string"/>
+        <attr name="cpiHint" format="string"/>
+        <attr name="cpiIsEnable" format="boolean"/>
+        <attr name="cpiInputType" format="enum">
+            <enum name="text" value="0"/>
+            <enum name="name" value="1"/>
+            <enum name="company" value="2"/>
+            <enum name="email" value="3"/>
+            <enum name="number" value="4"/>
+            <enum name="sms" value="5"/>
+            <enum name="confirmCode" value="6"/>
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="CustomMoneyView">
+        <attr name="cpmTextMaxLength" format="integer"/>
+        <attr name="cpmLabel" format="string"/>
+        <attr name="cpmText" format="string"/>
+        <attr name="cpmHint" format="string"/>
+        <attr name="cpmIsEnable" format="boolean"/>
+    </declare-styleable>
+
+    <declare-styleable name="CustomInputBox">
+        <attr name="cpibLabel" format="string"/>
+        <attr name="cpibText" format="string"/>
+        <attr name="cpibHint" format="string"/>
+        <attr name="cpibMinLines" format="integer"/>
+        <attr name="cpibMaxLines" format="integer"/>
+        <attr name="cpibMaxSymbols" format="integer"/>
+        <attr name="cpibIsEnable" format="boolean"/>
+    </declare-styleable>
+
+
+    <declare-styleable name="CustomSelectView">
+        <attr name="cpsLabel" format="string"/>
+        <attr name="cpsText" format="string"/>
+        <attr name="cpsHint" format="string"/>
+        <attr name="cpsActionIcon" format="integer"/>
+        <attr name="cpsEndIcon" format="integer"/>
+    </declare-styleable>
+
+    <declare-styleable name="PasswordInputView">
+        <attr name="pivLabel" format="string"/>
+        <attr name="pivText" format="string"/>
+        <attr name="pivHint" format="string"/>
+        <attr name="pivAutofill" format="boolean"/>
+    </declare-styleable>
+
+    <declare-styleable name="CustomSwitch">
+        <attr name="switchTitle" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="CustomSegmentedView">
+        <attr name="cpsbLeftText" format="string" />
+        <attr name="cpsbCentralText" format="string" />
+        <attr name="cpsbRightText" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="CustomToggleView">
+        <attr name="toggleLeftText" format="string" />
+        <attr name="toggleCentralText" format="string" />
+        <attr name="toggleRightText" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="CustomStepCounter">
+        <attr name="stepNumbers" format="integer"/>
+        <attr name="currentStep" format="integer"/>
+    </declare-styleable>
+</resources>

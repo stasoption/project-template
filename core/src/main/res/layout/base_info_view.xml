@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:parentTag="android.widget.LinearLayout">
+
+    <ImageView
+        android:id="@+id/imgInfo"
+        android:layout_width="@dimen/size_100"
+        android:layout_height="@dimen/size_100"
+        tools:src="@drawable/ic_warning"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/tvInfo"
+        style="@style/TextSecondary"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:layout_marginStart="@dimen/margin_medium"
+        android:layout_marginEnd="@dimen/margin_medium"
+        android:gravity="center"
+        tools:text="@string/template_long_text" />
+
+    <com.averin.android.developer.baseui.widget.CustomButton
+        android:id="@+id/btnInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_medium"
+        android:layout_marginTop="@dimen/margin_xlarge"
+        app:cpbText="@string/try_again" />
+
+</merge>

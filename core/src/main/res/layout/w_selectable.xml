@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ltSelectable"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/size_56"
+    android:paddingStart="@dimen/margin_small"
+    android:paddingEnd="@dimen/margin_small"
+    android:clickable="true"
+    android:focusable="true"
+    tools:ignore="UnusedAttribute">
+
+    <ImageView
+        android:id="@+id/ivLeftAction"
+        android:layout_width="@dimen/size_18"
+        android:layout_height="@dimen/size_18"
+        android:layout_marginStart="@dimen/margin_small"
+        android:layout_gravity="center"
+        tools:src="@drawable/ic_calendar"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/tvSelectableTextView"
+        style="@style/CustomInputView"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:paddingStart="@dimen/margin_small"
+        android:paddingEnd="@dimen/margin_small"
+        android:gravity="center_vertical"
+        app:layout_constraintStart_toEndOf="@+id/ivLeftAction"
+        app:layout_constraintEnd_toStartOf="@+id/ivRightAction"
+        tools:hint="Choose date"/>
+
+    <ImageView
+        android:id="@+id/ivRightAction"
+        android:layout_width="@dimen/size_18"
+        android:layout_height="@dimen/size_18"
+        android:layout_gravity="center"
+        android:layout_marginEnd="@dimen/margin_small"
+        tools:src="@drawable/ic_arrow_right"
+        tools:ignore="ContentDescription"/>
+
+</LinearLayout>

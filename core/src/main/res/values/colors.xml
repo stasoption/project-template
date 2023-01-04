@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#1DAA39</color>
+    <color name="colorPrimaryDark">#F2F6F5</color>
+    <color name="colorAccent">#FF7B0D</color>
+
+    <color name="textColorPrimary">@color/typography_title</color>
+    <color name="textColorSecondary">#3E3E3E</color>
+    <color name="strokeColorDefault">#D3D3D3</color>
+    <color name="strokeColorFocused">@color/colorPrimary</color>
+    <color name="hintColor">@color/typography_placeholder</color>
+
+    <color name="textToolbar">@color/textColorPrimary</color>
+
+    <color name="window_background">@color/white</color>
+    <color name="view_background">#F4F7F7</color>
+    <color name="dialogBackground">#80F2F6F5</color>
+
+    <color name="transparent_highlight">#80C4C6D0</color>
+
+    <color name="primary_blur">#D2EED7</color>
+    <color name="white">#FFFFFF</color>
+    <color name="beige">#F4F7F7</color>
+    <color name="red">#F91F43</color>
+    <color name="black">@android:color/black</color>
+    <color name="orange">#FF7B0D</color>
+    <color name="pureBlue">#0066FF</color>
+    <color name="divider">#E0E0E0</color>
+    <color name="gray">#666666</color>
+    <color name="light_gray">#D3D3D3</color>
+    <color name="error">@color/red</color>
+    <color name="warning">#eed202</color>
+    <color name="placeholder">@color/typography_placeholder</color>
+    <color name="typography_title">#202020</color>
+    <color name="typography_placeholder">#888B8F</color>
+    <color name="typography_body">#3E3E3E</color>
+    <color name="typography_body_50">#803E3E3E</color>
+    <color name="secondary_dark_green">#E8F6EB</color>
+
+    <!-- background gradient start -->
+    <color name="start_background_gradient_color">#DDEFE2</color>
+    <color name="center_background_gradient_color">#F2F6F5</color>
+    <color name="end_background_gradient_color">#E0F0E5</color>
+    <!-- background gradient end -->
+
+    <!-- buttons start -->
+    <color name="primary_button_default">@color/colorPrimary</color>
+    <color name="primary_button_pressed">#2F9B14</color>
+    <color name="primary_button_disabled">#D2EED7</color>
+    <color name="primary_button_stroke">@color/colorPrimary</color>
+    <color name="secondary_button_default">@color/white</color>
+    <color name="secondary_button_pressed">#E8F6EB</color>
+    <color name="secondary_button_disabled">#F4F7F7</color>
+    <color name="secondary_button_stroke">@color/colorPrimary</color>
+    <color name="warning_button_default">@color/white</color>
+    <color name="warning_button_pressed">#FFEBEC</color>
+    <color name="warning_button_disabled">#FDC2CC</color>
+    <color name="warning_button_stroke">@color/red</color>
+    <!-- buttons end -->
+
+    <!-- tags start -->
+    <color name="tag_bg_color_1">#D2EED7</color>
+    <color name="tag_bg_color_2">#FFEFE2</color>
+    <color name="tag_bg_color_3">#F7E3FF</color>
+    <color name="tag_bg_color_4">#E5F0FF</color>
+
+    <color name="tag_txt_color_1">@color/colorPrimary</color>
+    <color name="tag_txt_color_2">@color/orange</color>
+    <color name="tag_txt_color_3">#9650F1</color>
+    <color name="tag_txt_color_4">@color/pureBlue</color>
+    <!-- tags end -->
+</resources>

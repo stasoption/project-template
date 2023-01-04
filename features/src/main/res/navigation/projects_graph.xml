@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/projects_graph"
+    app:startDestination="@+id/projects">
+
+    <action
+        android:id="@+id/openProjectInfo"
+        app:destination="@+id/projectInfo"/>
+
+    <fragment
+        android:id="@+id/projects"
+        android:name="com.averin.android.developer.github.presentation.vacancies.ProjectsFragment"
+        tools:layout="@layout/fr_projects" />
+
+    <fragment
+        android:id="@+id/projectInfo"
+        android:name="com.averin.android.developer.github.presentation.info.VacancyDashboardFragment"
+        tools:layout="@layout/fr_github_project_info">
+        <argument
+            android:name="vacancyId"
+            app:argType="integer"/>
+    </fragment>
+</navigation>

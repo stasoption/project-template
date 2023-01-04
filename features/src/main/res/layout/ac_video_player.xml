@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/mainView">
+
+    <com.google.android.exoplayer2.ui.StyledPlayerView
+        android:id="@+id/styledPlayerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/typography_body"
+        app:use_controller="false"/>
+
+    <ImageView
+        android:id="@+id/ivCentralPlayPauseButton"
+        style="@style/ImageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="centerInside"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:src="@drawable/img_play_button"
+        tools:ignore="ContentDescription" />
+
+    <View
+        android:id="@+id/topControlBackground"
+        android:layout_width="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_height="@dimen/size_56"
+        android:background="@drawable/bg_top_video_player_controls"/>
+
+    <LinearLayout
+        android:id="@+id/ltControlsPanel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_vertical"
+        android:background="@color/typography_body_50"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/margin_medium"
+            android:paddingEnd="@dimen/margin_medium"
+            android:paddingBottom="@dimen/margin_medium"
+            android:paddingTop="@dimen/margin_small">
+
+            <ImageView
+                android:id="@+id/ivPlayPauseButton"
+                style="@style/ImageButton"
+                tools:src="@drawable/ic_pause"
+                android:layout_gravity="center_vertical"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/tvTimeStart"
+                style="@style/TextSecondary"
+                android:layout_width="@dimen/size_56"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:layout_gravity="center_vertical"
+                android:gravity="center"
+                tools:text="1:31:32"
+                android:includeFontPadding="true"
+                android:layout_marginStart="@dimen/margin_medium"/>
+
+            <androidx.appcompat.widget.AppCompatSeekBar
+                android:id="@+id/videoSeekBar"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/size_16"
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical"
+                android:thumb="@drawable/bg_video_player_thumb"
+                android:indeterminateOnly="false"
+                android:progressTint="@color/colorPrimary"
+                android:secondaryProgressTint="@color/primary_blur"
+                android:splitTrack="false"
+                android:maxHeight="4dp"
+                tools:max="1000"
+                tools:progress="234" />
+
+            <TextView
+                android:id="@+id/tvTimeFinish"
+                style="@style/TextSecondary"
+                android:layout_width="@dimen/size_56"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:gravity="center"
+                android:textColor="@color/white"
+                tools:text="-1:31:32"
+                android:includeFontPadding="true"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/ivBack"
+        style="@style/ImageButton"
+        android:src="@drawable/ic_clear"
+        android:layout_margin="@dimen/margin_medium"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="ContentDescription"
+        app:tint="@color/white" />
+
+    <ProgressBar
+        android:id="@+id/loadingProgressBar"
+        android:layout_width="@dimen/size_72"
+        android:layout_height="@dimen/size_72"
+        android:indeterminateTint="@color/colorAccent"
+        android:layout_centerInParent="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Invisible for user. It needs to make custom seekbar logic-->
+    <com.google.android.exoplayer2.ui.StyledPlayerControlView
+        android:id="@+id/playerControlView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        app:scrubber_color="@color/red"
+        app:played_color="@color/colorPrimary"
+        app:unplayed_color="@color/white"
+        app:buffered_color="@color/gray"
+        app:layout_constraintBottom_toTopOf="parent"/>
+
+    <androidx.appcompat.widget.AppCompatSeekBar
+        android:id="@+id/chartSeekBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

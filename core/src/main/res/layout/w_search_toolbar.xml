@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:parentTag="android.widget.FrameLayout">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/ltToolbarPanel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingEnd="@dimen/margin_medium">
+
+        <ImageView
+            android:id="@+id/ivHideSearch"
+            style="@style/ImageButton"
+            android:src="@drawable/ic_back"
+            app:tint="@color/textToolbar"
+            android:clickable="false"
+            android:focusable="false"
+            android:padding="@dimen/margin_2"
+            android:layout_marginStart="@dimen/margin_medium"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvScreenName"
+            app:layout_constraintBottom_toBottomOf="@+id/tvScreenName"
+            app:layout_constraintEnd_toStartOf="@+id/tvScreenName"
+            tools:ignore="ContentDescription"
+            tools:tint="@color/textToolbar"/>
+
+        <View
+            android:id="@+id/vBackClickableArea"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:clickable="true"
+            android:focusable="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/tvScreenName"
+            app:layout_constraintBottom_toBottomOf="@+id/tvScreenName"
+            app:layout_constraintTop_toTopOf="@+id/tvScreenName"/>
+
+        <TextView
+            android:id="@+id/tvScreenName"
+            style="@style/CustomToolbarText"
+            android:layout_height="@dimen/size_56"
+            android:gravity="center_vertical"
+            android:includeFontPadding="false"
+            app:layout_goneMarginEnd="0dp"
+            app:layout_constraintStart_toEndOf="@+id/ivHideSearch"
+            app:layout_constraintEnd_toStartOf="@+id/ivActionSearch"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@string/template_middle_text"/>
+
+        <ImageView
+            android:id="@+id/ivActionSearch"
+            style="@style/ImageButton"
+            android:src="@drawable/ic_search"
+            app:layout_constraintStart_toEndOf="@+id/tvScreenName"
+            app:layout_constraintEnd_toStartOf="@+id/ivAction2"
+            app:layout_constraintTop_toTopOf="@+id/tvScreenName"
+            app:layout_constraintBottom_toBottomOf="@+id/tvScreenName"
+            tools:ignore="ContentDescription" />
+
+        <ImageView
+            android:id="@+id/ivAction2"
+            style="@style/ImageButton"
+            android:src="@drawable/ic_debug_placeholder"
+            android:visibility="gone"
+            android:layout_marginStart="@dimen/margin_medium"
+            app:layout_constraintStart_toEndOf="@+id/ivActionSearch"
+            app:layout_constraintEnd_toStartOf="@+id/ivAction1"
+            app:layout_constraintTop_toTopOf="@+id/tvScreenName"
+            app:layout_constraintBottom_toBottomOf="@+id/tvScreenName"
+            tools:ignore="ContentDescription" />
+
+        <ImageView
+            android:id="@+id/ivAction1"
+            style="@style/ImageButton"
+            android:src="@drawable/ic_debug_placeholder"
+            android:visibility="gone"
+            android:layout_marginStart="@dimen/margin_medium"
+            app:layout_constraintStart_toEndOf="@+id/ivAction2"
+            app:layout_constraintTop_toTopOf="@+id/tvScreenName"
+            app:layout_constraintBottom_toBottomOf="@+id/tvScreenName"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:ignore="ContentDescription" />
+
+        <com.averin.android.developer.baseui.widget.field.CustomSearchingView
+            android:id="@+id/searchInputView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_medium"
+            app:layout_constraintTop_toBottomOf="@+id/tvScreenName"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</merge>

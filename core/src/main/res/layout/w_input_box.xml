@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:parentTag="android.widget.FrameLayout">
+
+    <LinearLayout
+        android:id="@+id/ltInputBox"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tvLabel"
+            style="@style/FieldLabel"
+            tools:text="Email address"/>
+
+        <com.averin.android.developer.baseui.widget.field.CustomEditText
+            android:id="@+id/etTextValue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="@dimen/size_100"
+            android:lineSpacingExtra="3sp"
+            style="@style/CustomInputBox"
+            android:gravity="top"
+            android:background="@drawable/bg_input_view"
+            android:padding="@dimen/margin_medium"/>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/tvErrorMessage"
+                style="@style/FieldError"
+                android:gravity="start|bottom"
+                tools:text="@string/template_short_text"
+                tools:visibility="visible" />
+            <TextView
+                android:id="@+id/tvSymbolsCounter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end|bottom"
+                style="@style/TextSecondary"
+                android:textSize="@dimen/text_10"
+                android:textColor="@color/typography_title"
+                tools:text="0/1000 symbols"/>
+        </FrameLayout>
+    </LinearLayout>
+</merge>

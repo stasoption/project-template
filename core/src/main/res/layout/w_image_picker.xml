@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/ivImagePreview"
+            android:layout_width="@dimen/size_100"
+            android:layout_height="@dimen/size_100"
+            style="@style/ImageButton"
+            android:src="@drawable/ic_logo_placeholder"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:background="@drawable/bg_image_picker"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription" />
+
+        <ProgressBar
+            android:id="@+id/imageLoader"
+            android:layout_width="@dimen/size_24"
+            android:layout_height="@dimen/size_24"
+            android:visibility="gone"
+            android:indeterminateTint="@color/colorAccent"
+            app:layout_constraintTop_toTopOf="@+id/ivImagePreview"
+            app:layout_constraintBottom_toBottomOf="@+id/ivImagePreview"
+            app:layout_constraintStart_toStartOf="@+id/ivImagePreview"
+            app:layout_constraintEnd_toEndOf="@+id/ivImagePreview"/>
+
+        <ImageView
+            android:id="@+id/btnImageAction"
+            style="@style/ImageButton"
+            android:layout_width="@dimen/size_36"
+            android:layout_height="@dimen/size_36"
+            android:padding="@dimen/size_8"
+            android:background="@drawable/bg_image_action"
+            android:src="@drawable/ic_add_image"
+            app:layout_constraintBottom_toBottomOf="@+id/ivImagePreview"
+            app:layout_constraintEnd_toEndOf="@+id/ivImagePreview"
+            tools:ignore="ContentDescription" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</merge>

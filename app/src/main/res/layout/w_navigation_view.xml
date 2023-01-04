@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:parentTag="android.widget.FrameLayout">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/ltNavigationPanel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_bottom_nav_panel"
+        app:layout_constraintTop_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <LinearLayout
+            android:id="@+id/ltItem1"
+            tools:ignore="UselessParent"
+            style="@style/NavigationLayout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/ltItem2"
+            app:layout_constraintBottom_toBottomOf="parent">
+            <ImageView
+                android:id="@+id/ivIcon1"
+                style="@style/NavigationIcon"
+                tools:src="@drawable/ic_tab_vacancy_selected"/>
+            <TextView
+                android:id="@+id/tvTitle1"
+                style="@style/NavigationTextView"
+                tools:text="@string/tab_projects"
+                tools:ignore="UnusedAttribute" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ltItem2"
+            tools:ignore="UselessParent"
+            style="@style/NavigationLayout"
+            app:layout_constraintStart_toEndOf="@+id/ltItem1"
+            app:layout_constraintEnd_toStartOf="@+id/ltItem3"
+            app:layout_constraintBottom_toBottomOf="parent">
+            <ImageView
+                android:id="@+id/ivIcon2"
+                style="@style/NavigationIcon"
+                tools:src="@drawable/ic_tab_candidates_default"/>
+            <TextView
+                android:id="@+id/tvTitle2"
+                style="@style/NavigationTextView"
+                tools:text="@string/tab_candidates"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ltItem3"
+            tools:ignore="UselessParent"
+            style="@style/NavigationLayout"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/ltItem2"
+            app:layout_constraintEnd_toStartOf="@+id/ltItem4"
+            app:layout_constraintBottom_toBottomOf="parent">
+            <ImageView
+                android:id="@+id/ivIcon3"
+                style="@style/NavigationIcon"
+                tools:src="@drawable/ic_tab_feed_default"/>
+            <TextView
+                android:id="@+id/tvTitle3"
+                style="@style/NavigationTextView"
+                tools:text="@string/tab_feed"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ltItem4"
+            tools:ignore="UselessParent"
+            style="@style/NavigationLayout"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/ltItem3"
+            app:layout_constraintEnd_toStartOf="@+id/ltItem5"
+            app:layout_constraintBottom_toBottomOf="parent">
+            <ImageView
+                android:id="@+id/ivIcon4"
+                style="@style/NavigationIcon"
+                tools:src="@drawable/ic_tab_unread_default"
+                tools:ignore="ContentDescription" />
+            <TextView
+                android:id="@+id/tvTitle4"
+                style="@style/NavigationTextView"
+                tools:text="@string/tab_chats"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ltItem5"
+            tools:ignore="UselessParent"
+            style="@style/NavigationLayout"
+            app:layout_constraintStart_toEndOf="@+id/ltItem4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+            <ImageView
+                android:id="@+id/ivIcon5"
+                style="@style/NavigationIcon"
+                tools:src="@drawable/ic_tab_more_default"/>
+            <TextView
+                android:id="@+id/tvTitle5"
+                style="@style/NavigationTextView"
+                tools:text="@string/tab_menu"/>
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</merge>

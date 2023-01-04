@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.averin.android.developer.baseui.widget.field.CustomEditText
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/etTextValue"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/field_height"
+    style="@style/CustomInputView"
+    android:inputType="phone"
+    android:background="@android:color/transparent"
+    android:paddingHorizontal="@dimen/margin_medium" />

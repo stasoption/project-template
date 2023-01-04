@@ -1,0 +1,92 @@
+apply plugin: Plugins.kotlinAndroid
+apply plugin: Plugins.kotlinKapt
+apply plugin: Plugins.detekt
+apply plugin: Plugins.gradleVersions
+
+apply from: '../config/quality/checkstyle.gradle'
+apply from: '../config/quality/ktlint.gradle'
+apply from: '../config/quality/jacoco.gradle'
+
+android {
+    compileSdkVersion AppVersions.compileSdk
+
+    defaultConfig {
+        minSdkVersion AppVersions.minSdk
+        targetSdkVersion AppVersions.targetSdk
+        versionCode rootProject.getVersionCode()
+        versionName rootProject.getVersionName()
+        multiDexEnabled = true
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), '../config/proguard-rules.pro'
+        }
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), '../config/proguard-rules.pro'
+        }
+    }
+
+
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+        test.java.srcDirs += 'src/test/kotlin'
+    }
+
+    lintOptions {
+        disable 'InvalidPackage'
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+detekt {
+    buildUponDefaultConfig = true
+    toolVersion = AppVersions.detekt
+    input = files("src/main/kotlin")
+    config = files("$projectDir/../config/quality/detekt.yml")
+    reports {
+        xml {
+            enabled = true
+            destination = file("$projectDir/build/reports/detekt/detekt-report.xml")
+        }
+        html {
+            enabled = true
+            destination = file("$projectDir/build/reports/detekt/detekt-report.html")
+        }
+    }
+}
+
+task checkBeforePush(group: 'verification',
+    description: 'Inspect your code before push') {
+    dependsOn 'checkstyle', 'detekt', 'ktlint', 'lintDebug'
+}
+
+task checkBeforePushFast(group: 'verification',
+    description: 'Inspect your code before push without lint build') {
+    dependsOn 'checkstyle', 'detekt', 'ktlint'
+}
+
+def isNonStable = { String version ->
+    def stableKeyword = ['RELEASE', 'FINAL', 'GA'].any { it -> version.toUpperCase().contains(it) }
+    def regex = /^[0-9,.v-]+(-r)?$/
+    return !stableKeyword && !(version ==~ regex)
+}
+
+dependencyUpdates {
+    // Disallow release candidates as upgradable versions from stable versions
+    rejectVersionIf {
+        isNonStable(it.candidate.version) && !isNonStable(it.currentVersion)
+    }
+}
+
+configurations.all {
+    resolutionStrategy {
+        force 'androidx.core:core-ktx:1.6.0'
+    }
+}

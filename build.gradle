@@ -1,0 +1,58 @@
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
+        maven { url "https://plugins.gradle.org/m2/" }
+
+    }
+    dependencies {
+        classpath ClassPaths.gradle
+        classpath ClassPaths.kotlin
+        classpath ClassPaths.jacoco
+        classpath ClassPaths.navigationSafeArgs
+        classpath ClassPaths.detekt
+        classpath ClassPaths.gradleVersions
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
+    }
+}
+
+subprojects {
+    tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
+        kotlinOptions {
+            // Enable experimental coroutines APIs, including Flow
+            freeCompilerArgs += "-Xuse-experimental=kotlinx.coroutines.ExperimentalCoroutinesApi"
+            freeCompilerArgs += "-Xuse-experimental=kotlinx.coroutines.FlowPreview"
+
+            // Set JVM target to 1.8
+            jvmTarget = "1.8"
+        }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+static def getVersionName() {
+    def tag = 'git describe --tags'.execute().text.split('-').first()?.trim()
+    if (tag =~ /^v.*$/) {
+        return tag.substring(1, tag.length())
+    }
+    return '1.0.0'
+}
+
+static int getVersionCode() {
+    /**
+     * Use the number of seconds / 20 since Jan 1 1970 as the versionCode.
+     * This lets us upload a new build at most every 20 seconds until 3331 year.
+     */
+    return (int)(new Date().getTime() / 20000)
+}

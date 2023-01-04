@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.averin.android.developer.baseui.widget.toolbar.CustomSearchToolbar
+        android:id="@+id/searchToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:searchPanelTitle="Search Panel"
+        app:searchPanelHint="@string/search"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <com.averin.android.developer.baseui.widget.imagepicker.CustomImagePicker
+        android:id="@+id/imagePicker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:layout_marginStart="@dimen/margin_medium"
+        android:layout_marginEnd="@dimen/margin_medium"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchToolbar"/>
+
+    <com.averin.android.developer.baseui.widget.CustomSegmentedView
+        android:id="@+id/segmentedButtonView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_large"
+        android:layout_marginStart="@dimen/margin_medium"
+        android:layout_marginEnd="@dimen/margin_medium"
+        app:cpsbLeftText="Tab 1"
+        app:cpsbCentralText="Tab 2"
+        app:cpsbRightText="Tab 3"
+        app:layout_constraintTop_toBottomOf="@+id/imagePicker"/>
+
+    <com.averin.android.developer.baseui.widget.CustomToggleView
+        android:id="@+id/toggleView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:layout_marginStart="@dimen/margin_medium"
+        android:layout_marginEnd="@dimen/margin_medium"
+        app:toggleLeftText="Item 1"
+        app:toggleCentralText="Item 2"
+        app:toggleRightText="Item 3"
+        app:layout_constraintTop_toBottomOf="@+id/segmentedButtonView"/>
+
+    <com.averin.android.developer.baseui.widget.CustomStepCounter
+        android:id="@+id/stepCounter"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size_40"
+        android:layout_marginTop="@dimen/margin_large"
+        android:layout_marginStart="@dimen/margin_medium"
+        android:layout_marginEnd="@dimen/margin_medium"
+        app:stepNumbers="5"
+        app:currentStep="0"
+        app:layout_constraintTop_toBottomOf="@+id/toggleView"/>
+
+    <androidx.appcompat.widget.AppCompatSeekBar
+        android:id="@+id/appCompatSeekBar"
+        style="@style/CustomSeekBar"
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:layout_marginStart="@dimen/margin_medium"
+        android:layout_marginEnd="@dimen/margin_medium"
+        app:layout_constraintTop_toBottomOf="@+id/stepCounter" />
+
+    <com.averin.android.developer.baseui.widget.tag.TagsView
+        android:id="@+id/tagsView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/margin_medium"
+        app:layout_constraintTop_toBottomOf="@+id/appCompatSeekBar"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

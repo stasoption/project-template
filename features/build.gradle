@@ -1,0 +1,29 @@
+apply plugin: Plugins.androidLibrary
+
+apply from: '../config/config-android.gradle'
+apply plugin: Plugins.navigationSafeArgsKotlin
+apply from: '../config/config-ui-android.gradle'
+apply from: '../config/dependency-groups.gradle'
+
+android {
+    defaultConfig {
+        buildConfigField 'String', 'VERSION_NAME', "\"${ rootProject.getVersionName() }\""
+    }
+}
+
+dependencies {
+    implementation project(Modules.core)
+    dependencyMiscDateTime()
+    dependencyKotlinAll()
+    dependencyDiMain()
+    dependencyAndroidXUi()
+    dependencyAndroidXNavigation()
+    dependencyMiscDelegates()
+    dependencyJsonMoshi()
+    dependencyNetworkAll()
+    dependencyMiscTimber()
+    dependencyTestsAll()
+    dependencyGlide()
+    dependencyKeyboardListener()
+    dependencyExoplayer()
+}

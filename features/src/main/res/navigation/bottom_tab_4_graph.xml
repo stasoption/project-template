@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/chat_graph"
+    app:startDestination="@id/bottomTab4Fragment">
+
+    <fragment
+        android:id="@+id/bottomTab4Fragment"
+        android:name="com.averin.android.developer.bottomtab4.presentation.BottomTab4Fragment"
+        tools:layout="@layout/fr_bottom_tab_4"/>
+</navigation>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ltRootItem"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/li_item_height"
+    android:paddingStart="@dimen/margin_medium"
+    android:paddingEnd="@dimen/margin_medium"
+    android:background="@drawable/bg_adapter_item">
+
+    <ImageView
+        android:id="@+id/ivCompanyLogo"
+        android:layout_width="@dimen/size_40"
+        android:layout_height="@dimen/size_40"
+        android:src="@drawable/ic_logo_placeholder"
+        android:scaleType="centerCrop"
+        android:adjustViewBounds="true"
+        app:layout_goneMarginStart="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/tvVacancyName"
+        style="@style/LiItemPrimaryLimited"
+        tools:text="Internet Security Assistant"
+        android:layout_marginStart="@dimen/margin_medium"
+        android:layout_marginEnd="@dimen/margin_small"
+        app:layout_constraintTop_toTopOf="@+id/ivCompanyLogo"
+        app:layout_constraintBottom_toTopOf="@+id/tvCompanyName"
+        app:layout_constraintStart_toEndOf="@+id/ivCompanyLogo"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/tvCompanyName"
+        style="@style/LiItemSecondaryLimited"
+        android:textColor="@color/textColorSecondary"
+        tools:text="Google inc"
+        android:layout_marginStart="@dimen/margin_medium"
+        android:layout_marginEnd="@dimen/margin_small"
+        app:layout_constraintTop_toBottomOf="@+id/tvVacancyName"
+        app:layout_constraintBottom_toBottomOf="@+id/ivCompanyLogo"
+        app:layout_constraintStart_toEndOf="@+id/ivCompanyLogo"
+        app:layout_constraintEnd_toEndOf="parent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

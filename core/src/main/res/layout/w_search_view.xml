@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:parentTag="android.widget.FrameLayout">
+
+    <LinearLayout
+        android:id="@+id/rootLayout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size_56"
+        android:orientation="horizontal"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:background="@drawable/bg_input_view"
+        tools:ignore="UnusedAttribute">
+
+        <ImageView
+            android:id="@+id/searchBtn"
+            style="@style/ImageButton"
+            android:layout_marginStart="@dimen/margin_medium"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_search"
+            tools:ignore="ContentDescription"
+            app:tint="@color/gray" />
+
+        <com.averin.android.developer.baseui.widget.field.CustomEditText
+            android:id="@+id/etSearchView"
+            style="@style/CustomText"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textSize="@dimen/text_16"
+            android:imeOptions="actionSearch"
+            android:textColor="@color/textColorPrimary"
+            android:textColorHint="@color/hintColor"
+            android:includeFontPadding="false"
+            android:paddingStart="@dimen/margin_small"
+            android:paddingEnd="@dimen/margin_medium"
+            android:layout_gravity="center"
+            android:maxLines="1"
+            android:background="@android:color/transparent"
+            android:textCursorDrawable="@drawable/cursor_drawable"
+            android:theme="@style/CustomEditText"
+            android:hint="@string/search" />
+
+        <ImageView
+            android:id="@+id/clearBtn"
+            style="@style/ImageButton"
+            android:layout_marginEnd="@dimen/margin_medium"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_clear_search_request"
+            tools:ignore="ContentDescription" />
+    </LinearLayout>
+</merge>

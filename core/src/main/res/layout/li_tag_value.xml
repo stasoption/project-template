@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ltRoot"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/margin_small"
+    android:layout_marginStart="@dimen/margin_medium"
+    android:background="@drawable/bg_li_tag">
+
+    <TextView
+        android:id="@+id/tvCandidateTag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/CandidateTag"
+        app:layout_constrainedWidth="true"
+        android:textColor="@color/selector_selected_label"
+        tools:text="@string/template_short_text"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/ivRemove"/>
+
+    <ImageView
+        android:id="@+id/ivRemove"
+        android:layout_width="@dimen/size_16"
+        android:layout_height="@dimen/size_16"
+        android:src="@drawable/ic_clear"
+        android:layout_marginEnd="@dimen/margin_small"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:tint="@color/white" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

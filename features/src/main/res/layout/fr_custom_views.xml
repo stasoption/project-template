@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <com.averin.android.developer.baseui.widget.toolbar.CustomToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cptTitle="Custom Views"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <com.averin.android.developer.baseui.widget.CustomSegmentedView
+        android:id="@+id/toggleView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_medium"
+        android:layout_marginEnd="@dimen/margin_medium"
+        app:cpsbLeftText="@string/tab_fields"
+        app:cpsbCentralText="@string/tab_buttons"
+        app:cpsbRightText="@string/tab_widgets"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <com.averin.android.developer.baseui.widget.NonSwipableViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/toggleView"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <include android:id="@+id/loadingView"
+        layout="@layout/w_loading_view" />
+
+    <include android:id="@+id/errorInfoView"
+        layout="@layout/base_error_view" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

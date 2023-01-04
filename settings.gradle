@@ -1,0 +1,10 @@
+// Gradle 6.0 is pain. See https://github.com/gradle/gradle/issues/11090 for more information
+// We could use https://github.com/pablisco/auto-module to generate modules.
+// As for 07.08.2020 it has problems with modules named base-ui.
+// We also could use some other solutions. For now just include module in two places.
+// First place - settings.gradle. Second place -  buildSrc Modules.kt file.
+include(
+    ":app",
+    ':core',
+    ':features'
+)

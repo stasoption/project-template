@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.averin.android.developer.baseui.widget.field.ExpandedTextView
+        android:id="@+id/expandedTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:layout_marginStart="@dimen/margin_medium"
+        android:layout_marginEnd="@dimen/margin_medium"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.averin.android.developer.baseui.widget.field.CustomInputView
+        android:id="@+id/inputView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:layout_marginStart="@dimen/margin_medium"
+        android:layout_marginEnd="@dimen/margin_medium"
+        app:cpiLabel="Text"
+        app:cpiHint="Placeholder"
+        app:cpiInputType="text"
+        app:cpiIsEnable="true"
+        app:layout_constraintTop_toBottomOf="@+id/expandedTextView"/>
+
+    <com.averin.android.developer.baseui.widget.field.CustomSelectView
+        android:id="@+id/selectView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        android:layout_marginStart="@dimen/margin_medium"
+        android:layout_marginEnd="@dimen/margin_medium"
+        app:cpsLabel="Text"
+        app:cpsHint="Select date"
+        app:cpsActionIcon="@drawable/ic_calendar"
+        app:cpsEndIcon="@drawable/ic_arrow_right"
+        app:layout_constraintTop_toBottomOf="@+id/inputView"/>
+
+    <com.averin.android.developer.baseui.widget.field.CustomMoneyView
+        android:id="@+id/moneyView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        android:layout_marginStart="@dimen/margin_medium"
+        android:layout_marginEnd="@dimen/margin_medium"
+        app:cpmLabel="Money field"
+        app:cpmHint="@string/hint_salary_from"
+        app:layout_constraintTop_toBottomOf="@+id/selectView"/>
+
+    <com.averin.android.developer.baseui.widget.field.PasswordInputView
+        android:id="@+id/passwordView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        android:layout_marginStart="@dimen/margin_medium"
+        android:layout_marginEnd="@dimen/margin_medium"
+        app:layout_constraintTop_toBottomOf="@+id/moneyView"/>
+
+    <com.averin.android.developer.baseui.widget.field.CustomInputBox
+        android:id="@+id/inputBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        android:layout_marginStart="@dimen/margin_medium"
+        android:layout_marginEnd="@dimen/margin_medium"
+        app:cpibHint="Placeholder"
+        app:cpibLabel="Text"
+        app:layout_constraintTop_toBottomOf="@+id/passwordView"/>
+
+    <com.averin.android.developer.baseui.widget.field.CustomSearchingView
+        android:id="@+id/searchingView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:layout_marginStart="@dimen/margin_medium"
+        android:layout_marginEnd="@dimen/margin_medium"
+        app:layout_constraintTop_toBottomOf="@+id/inputBox"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

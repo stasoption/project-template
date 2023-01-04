@@ -1,0 +1,179 @@
+def Group(Closure closure) {
+    closure.delegate = dependencies
+    return closure
+}
+
+ext {
+    dependencyKotlinStd = Group {
+        implementation KotlinDependencies.stdLib
+    }
+
+    dependencyKotlinCoroutines = Group {
+        implementation KotlinDependencies.coroutinesCore
+        implementation KotlinDependencies.coroutinesAndroid
+        testImplementation KotlinDependencies.coroutinesTest
+    }
+
+    dependencyKotlinAll = Group {
+        dependencyKotlinStd()
+        dependencyKotlinCoroutines()
+    }
+
+    dependencyAndroidXMultidex = Group {
+        implementation AndroidXDependencies.multidexLib
+    }
+
+    dependencyAndroidXCore = Group {
+        implementation AndroidXDependencies.coreLib
+    }
+
+    dependencyAndroidXCompat = Group {
+        implementation AndroidXDependencies.appCompat
+        implementation AndroidXDependencies.fragments
+        implementation AndroidXDependencies.viewmodelKtx
+        implementation AndroidXDependencies.common
+        implementation AndroidXDependencies.test
+    }
+
+    dependencyAndroidXViews = Group {
+        implementation AndroidXDependencies.material
+        implementation AndroidXDependencies.recyclerView
+        implementation AndroidXDependencies.swipeRefresh
+        implementation AndroidXDependencies.constraintLayout
+        implementation MiscDependencies.shimmer
+        implementation AndroidXDependencies.flexbox
+    }
+
+    dependencyAndroidXUi = Group {
+        dependencyAndroidXCore()
+        dependencyAndroidXCompat()
+        dependencyAndroidXViews()
+    }
+
+    dependencyAndroidXNavigation = Group {
+        implementation AndroidXDependencies.navigationFragment
+        implementation AndroidXDependencies.navigationUi
+    }
+
+    dependencyAndroidXCustomTabs = Group {
+        implementation AndroidXDependencies.customTabsLib
+    }
+
+    dependencyAndroidXExif = Group {
+        implementation AndroidXDependencies.exifInformation
+    }
+
+    dependencyAndroidXPreferences = Group {
+        implementation AndroidXDependencies.preferences
+    }
+
+    dependencyAndroidXAll = Group {
+        dependencyAndroidXUi()
+        dependencyAndroidXNavigation()
+        dependencyAndroidXCustomTabs()
+        dependencyAndroidXExif()
+        dependencyAndroidXPreferences()
+    }
+
+    dependencyDiMain = Group {
+        implementation DiDependencies.koin
+        implementation DiDependencies.fragment
+        implementation DiDependencies.viewModel
+    }
+
+    dependencyDiScope = Group {
+        implementation DiDependencies.koinScope
+    }
+
+    dependencyDiWorkManager = Group {
+        implementation DiDependencies.koinWorkManager
+    }
+
+    dependencyDiTest = Group {
+        testImplementation DiDependencies.koinTest
+    }
+
+    dependencyDiAll = Group {
+        dependencyDiMain()
+        dependencyDiScope()
+        dependencyDiWorkManager()
+        dependencyDiTest()
+    }
+
+    dependencyJsonMoshi = Group {
+        implementation JsonDependencies.moshiKotlin
+        implementation JsonDependencies.moshiAdapters
+        kapt JsonDependencies.moshiCompiler
+    }
+
+    dependencyNetworkRetrofit = Group {
+        implementation NetworkDependencies.retrofit
+        implementation NetworkDependencies.retrofitMoshiConverter
+    }
+
+    dependencyNetworkOkHttp = Group {
+        implementation NetworkDependencies.okHttp
+        implementation NetworkDependencies.okHttpLogging
+    }
+
+    dependencyNetworkAll = Group {
+        dependencyNetworkRetrofit()
+        dependencyNetworkOkHttp()
+    }
+
+    dependencyTestsAll = Group {
+        implementation TestDependencies.junit
+        implementation TestDependencies.mockito
+    }
+
+    dependencyMiscTimber = Group {
+        implementation MiscDependencies.timberLib
+    }
+
+    dependencyMiscDateTime = Group {
+        implementation MiscDependencies.joda
+    }
+
+    dependencyMiscDelegates = Group {
+        implementation MiscDependencies.adapterDelegates
+        implementation MiscDependencies.viewBindingPropertyDelegate
+    }
+
+    dependencyMiscStaticAnalysis = Group {
+        implementation MiscDependencies.ktlint
+        implementation MiscDependencies.checkstyle
+    }
+
+    dependencyKeyboardListener = Group {
+        implementation MiscDependencies.keyboardvisibilityevent
+    }
+
+    dependencyInputMask = Group {
+        implementation MiscDependencies.inputMask
+    }
+
+    dependencyMiscAll = Group {
+        dependencyMiscMultidex()
+        dependencyMiscTimber()
+        dependencyMiscDateTime()
+        dependencyMiscCrashlytics()
+        dependencyMiscDelegates()
+        dependencyMiscStaticAnalysis()
+    }
+
+    dependencyGlide = Group {
+        implementation GlideDependencies.glide
+        implementation GlideDependencies.okhttp3Integration
+        implementation GlideDependencies.transformations
+        annotationProcessor GlideDependencies.compiler
+        kapt GlideDependencies.compiler
+    }
+
+    dependencyExoplayer = Group {
+        implementation Exoplayer.exoplayer
+    }
+
+    dependencyChart = Group {
+        implementation ChartsDependencies.androidChart
+    }
+}
