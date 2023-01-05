@@ -18,13 +18,10 @@ val restModule = module {
 
     single {
         val builder = OkHttpClient.Builder()
-
-        // logs
         if (BuildConfig.DEBUG) {
             SSLNetworkUtils.disableSSLValidation(builder)
             builder.addInterceptor(HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))
         }
-
         builder.apply {
             protocols(Collections.singletonList(Protocol.HTTP_1_1))
             addInterceptor(get<AuthorizationInterceptor>())
@@ -32,7 +29,6 @@ val restModule = module {
             writeTimeout(30, TimeUnit.SECONDS)
             readTimeout(30, TimeUnit.SECONDS)
         }
-
         builder.build()
     }
 

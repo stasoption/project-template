@@ -11,7 +11,7 @@
     android:background="@drawable/bg_adapter_item">
 
     <ImageView
-        android:id="@+id/ivCompanyLogo"
+        android:id="@+id/ivProjectLogo"
         android:layout_width="@dimen/size_40"
         android:layout_height="@dimen/size_40"
         android:src="@drawable/ic_logo_placeholder"
@@ -23,25 +23,24 @@
         app:layout_constraintStart_toStartOf="parent"/>
 
     <TextView
-        android:id="@+id/tvVacancyName"
+        android:id="@+id/tvProjectName"
         style="@style/LiItemPrimaryLimited"
         tools:text="Internet Security Assistant"
         android:layout_marginStart="@dimen/margin_medium"
         android:layout_marginEnd="@dimen/margin_small"
-        app:layout_constraintTop_toTopOf="@+id/ivCompanyLogo"
-        app:layout_constraintBottom_toTopOf="@+id/tvCompanyName"
-        app:layout_constraintStart_toEndOf="@+id/ivCompanyLogo"
+        app:layout_constraintTop_toTopOf="@+id/ivProjectLogo"
+        app:layout_constraintBottom_toTopOf="@+id/ivProjectLogo"
+        app:layout_constraintStart_toEndOf="@+id/ivProjectLogo"
         app:layout_constraintEnd_toEndOf="parent"/>
 
     <TextView
-        android:id="@+id/tvCompanyName"
+        android:id="@+id/tvProjectVisibility"
         style="@style/LiItemSecondaryLimited"
         android:textColor="@color/textColorSecondary"
-        tools:text="Google inc"
         android:layout_marginStart="@dimen/margin_medium"
         android:layout_marginEnd="@dimen/margin_small"
-        app:layout_constraintTop_toBottomOf="@+id/tvVacancyName"
-        app:layout_constraintBottom_toBottomOf="@+id/ivCompanyLogo"
-        app:layout_constraintStart_toEndOf="@+id/ivCompanyLogo"
+        app:layout_constraintTop_toBottomOf="@+id/tvProjectName"
+        app:layout_constraintBottom_toBottomOf="@+id/ivProjectLogo"
+        app:layout_constraintStart_toEndOf="@+id/ivProjectLogo"
         app:layout_constraintEnd_toEndOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

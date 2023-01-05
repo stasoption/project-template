@@ -1,5 +1,6 @@
 package com.averin.android.developer.customview.presentation.tabs
 
+import android.net.Uri
 import android.os.Bundle
 import android.view.View
 import android.widget.SeekBar
@@ -14,6 +15,7 @@ import com.averin.android.developer.baseui.widget.CustomToggleView
 import com.averin.android.developer.baseui.widget.tag.Tag
 import com.averin.android.developer.dashboard.R
 import com.averin.android.developer.dashboard.databinding.FrTab3Binding
+import java.io.File
 
 class Tab3Fragment : BaseFragment(R.layout.fr_tab_3) {
 
@@ -87,7 +89,7 @@ class Tab3Fragment : BaseFragment(R.layout.fr_tab_3) {
             imagePicker.apply {
                 requiredFragmentManager = supportFragmentManager()
                 onPickImageClickAction = { chooseImageFromGallery() }
-                onRemoveImageClickAction = { /* remove some data at viewModel */ }
+                imagePicker.onRemoveImageClickAction = { removePhoto() }
             }
 
             /*
@@ -113,6 +115,18 @@ class Tab3Fragment : BaseFragment(R.layout.fr_tab_3) {
                 })
             }
         }
+    }
+
+    override fun onImageSelected(imagePath: String?) {
+        imagePath?.let { path ->
+            val file = File(path)
+            // Send the file to a Server, save to viewModel etc
+            binding.imagePicker.imageUri = Uri.fromFile(file)
+        }
+    }
+
+    private fun removePhoto() {
+        // Remove from viewModel, Server etc
     }
 
     companion object {

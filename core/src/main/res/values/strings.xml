@@ -17,6 +17,7 @@
     <!-- errors start -->
     <string name="error_network">No connection</string>
     <string name="no_internet">No internet</string>
+    <string name="unexpected_error">Something went wrong</string>
     <string name="ssl_untrusted" translatable="false">The certificate authority is not trusted.</string>
     <string name="ssl_expired" translatable="false">The certificate has expired.</string>
     <string name="ssl_idmismatch" translatable="false">The certificate Hostname mismatch.</string>
@@ -69,15 +70,16 @@
     <!-- navigation panel end -->
 
     <!-- Login start -->
-    <string name="login_email_hint">username</string>
-    <string name="login">Sign in</string>
+    <string name="login_username_hint">GitHub username</string>
+    <string name="login">Log in</string>
     <!-- Login end -->
 
-    <!-- Candidate start -->
+    <!-- Projects start -->
+    <string name="gitHub_projects">GitHub projects</string>
     <string name="select_from_list">Add more from the list below</string>
     <string name="add_new">Add more from the list below</string>
     <string name="assign_to_vacancy">Assign to vacancy</string>
-    <!-- Candidate end -->
+    <!-- Projects end -->
 
     <!-- Cloud start -->
     <string name="time_sec_left">%s sec left</string>

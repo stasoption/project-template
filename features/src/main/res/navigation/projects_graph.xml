@@ -11,15 +11,15 @@
 
     <fragment
         android:id="@+id/projects"
-        android:name="com.averin.android.developer.github.presentation.vacancies.ProjectsFragment"
+        android:name="com.averin.android.developer.github.presentation.projects.ProjectsFragment"
         tools:layout="@layout/fr_projects" />
 
     <fragment
         android:id="@+id/projectInfo"
-        android:name="com.averin.android.developer.github.presentation.info.VacancyDashboardFragment"
+        android:name="com.averin.android.developer.github.presentation.info.ProjectInfoFragment"
         tools:layout="@layout/fr_github_project_info">
         <argument
-            android:name="vacancyId"
-            app:argType="integer"/>
+            android:name="project"
+            app:argType="com.averin.android.developer.github.domain.model.GitHubProject"/>
     </fragment>
 </navigation>

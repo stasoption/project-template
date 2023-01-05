@@ -1,26 +1,18 @@
 package com.averin.android.developer.auth.presentation
 
 import com.averin.android.developer.auth.domain.LoginInteractor
+import com.averin.android.developer.auth.domain.model.UserResponse
 import com.averin.android.developer.baseui.extension.androidx.lifecycle.SingleLiveEvent
 import com.averin.android.developer.baseui.presentation.BaseViewModel
-import kotlinx.coroutines.Job
 
 class LoginViewModel(private val loginInteractor: LoginInteractor) : BaseViewModel() {
 
     var email: String = ""
-    var password: String = ""
+    val userResponseLiveData = SingleLiveEvent<UserResponse>()
 
-    val loginSuccessEvent = SingleLiveEvent<Nothing>()
-    private var loginJob: Job? = null
-
-    fun login() {
-        if (loginJob?.isCompleted != false) {
-            loginJob = launchLoadingErrorJob {
-                loginInteractor.login(email, password).run {
-                    loginInteractor.loginToken = ""
-                    loginSuccessEvent.call()
-                }
-            }
-        }
+    fun loadProfile() = launchLoadingErrorJob {
+        val userResponse = loginInteractor.loadProfile(email)
+        loginInteractor.gitHubUserName = userResponse.login
+        userResponseLiveData.value = userResponse
     }
 }

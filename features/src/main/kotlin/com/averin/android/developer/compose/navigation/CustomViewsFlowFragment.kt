@@ -6,5 +6,5 @@ import org.koin.android.ext.android.inject
 
 class ComposeFlowFragment : BaseFlowFragment() {
     override val navControllerStorage: ComposeNavControllerStorage by inject()
-    override val graphResId: Int = R.navigation.custom_views_graph
+    override val graphResId: Int = R.navigation.compose_graph
 }

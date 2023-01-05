@@ -2,7 +2,6 @@ package com.averin.android.developer.app.network.rest
 
 import android.content.SharedPreferences
 import com.averin.android.developer.base.util.FlowPreferences
-import com.averin.android.developer.core.BuildConfig
 import com.averin.android.developer.core.BuildConfig.KEY_AUTH_LOGIN_TOKEN
 import com.averin.android.developer.core.BuildConfig.PREFERENCES_VERSION
 import com.squareup.moshi.Moshi

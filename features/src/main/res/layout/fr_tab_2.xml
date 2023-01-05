@@ -1,173 +1,183 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    android:overScrollMode="never"
+    android:fillViewport="true">
 
-    <com.averin.android.developer.baseui.widget.CustomButton
-        android:id="@+id/primaryEnabled"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_large"
-        android:layout_marginStart="@dimen/margin_medium"
-        android:layout_marginEnd="@dimen/margin_medium"
-        app:cpbText="Primary Enabled"
-        app:cpbType="primary"
-        app:cpbIcon="@drawable/ic_trash"
-        app:layout_constraintTop_toTopOf="parent"/>
+        android:paddingTop="@dimen/margin_medium"
+        android:paddingBottom="@dimen/margin_large">
 
-    <com.averin.android.developer.baseui.widget.CustomButton
-        android:id="@+id/primaryDisabled"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_medium"
-        android:layout_marginStart="@dimen/margin_medium"
-        android:layout_marginEnd="@dimen/margin_medium"
-        app:cpbText="Primary Disabled"
-        app:cpbType="primary"
-        app:cpbIcon="@drawable/ic_trash"
-        app:isButtonEnabled="false"
-        app:layout_constraintTop_toBottomOf="@+id/primaryEnabled"/>
+        <com.averin.android.developer.baseui.widget.CustomButton
+            android:id="@+id/primaryEnabled"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_large"
+            android:layout_marginStart="@dimen/margin_medium"
+            android:layout_marginEnd="@dimen/margin_medium"
+            app:cpbText="Primary Enabled"
+            app:cpbType="primary"
+            app:cpbIcon="@drawable/ic_trash"
+            app:layout_constraintTop_toTopOf="parent"/>
 
-    <com.averin.android.developer.baseui.widget.CustomButton
-        android:id="@+id/secondaryEnabled"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_medium"
-        android:layout_marginStart="@dimen/margin_medium"
-        android:layout_marginEnd="@dimen/margin_medium"
-        app:cpbText="Secondary Enabled"
-        app:cpbType="secondary"
-        app:cpbIcon="@drawable/ic_trash"
-        app:layout_constraintTop_toBottomOf="@+id/primaryDisabled"/>
+        <com.averin.android.developer.baseui.widget.CustomButton
+            android:id="@+id/primaryDisabled"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:layout_marginStart="@dimen/margin_medium"
+            android:layout_marginEnd="@dimen/margin_medium"
+            app:cpbText="Primary Disabled"
+            app:cpbType="primary"
+            app:cpbIcon="@drawable/ic_trash"
+            app:isButtonEnabled="false"
+            app:layout_constraintTop_toBottomOf="@+id/primaryEnabled"/>
 
-    <com.averin.android.developer.baseui.widget.CustomButton
-        android:id="@+id/secondaryDisabled"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_medium"
-        android:layout_marginStart="@dimen/margin_medium"
-        android:layout_marginEnd="@dimen/margin_medium"
-        app:cpbText="Secondary Disabled"
-        app:cpbType="secondary"
-        app:cpbIcon="@drawable/ic_trash"
-        app:isButtonEnabled="false"
-        app:layout_constraintTop_toBottomOf="@+id/secondaryEnabled"/>
+        <com.averin.android.developer.baseui.widget.CustomButton
+            android:id="@+id/secondaryEnabled"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:layout_marginStart="@dimen/margin_medium"
+            android:layout_marginEnd="@dimen/margin_medium"
+            app:cpbText="Secondary Enabled"
+            app:cpbType="secondary"
+            app:cpbIcon="@drawable/ic_trash"
+            app:layout_constraintTop_toBottomOf="@+id/primaryDisabled"/>
 
-    <com.averin.android.developer.baseui.widget.CustomButton
-        android:id="@+id/warningEnabled"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_medium"
-        android:layout_marginStart="@dimen/margin_medium"
-        android:layout_marginEnd="@dimen/margin_medium"
-        app:cpbText="Warning Enabled"
-        app:cpbType="warning"
-        app:cpbIcon="@drawable/ic_trash"
-        app:layout_constraintTop_toBottomOf="@+id/secondaryDisabled"/>
+        <com.averin.android.developer.baseui.widget.CustomButton
+            android:id="@+id/secondaryDisabled"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:layout_marginStart="@dimen/margin_medium"
+            android:layout_marginEnd="@dimen/margin_medium"
+            app:cpbText="Secondary Disabled"
+            app:cpbType="secondary"
+            app:cpbIcon="@drawable/ic_trash"
+            app:isButtonEnabled="false"
+            app:layout_constraintTop_toBottomOf="@+id/secondaryEnabled"/>
 
-    <com.averin.android.developer.baseui.widget.CustomButton
-        android:id="@+id/warningDisabled"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_medium"
-        android:layout_marginStart="@dimen/margin_medium"
-        android:layout_marginEnd="@dimen/margin_medium"
-        app:cpbText="Warning Disabled"
-        app:cpbType="warning"
-        app:cpbIcon="@drawable/ic_trash"
-        app:isButtonEnabled="false"
-        app:layout_constraintTop_toBottomOf="@+id/warningEnabled"/>
+        <com.averin.android.developer.baseui.widget.CustomButton
+            android:id="@+id/warningEnabled"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:layout_marginStart="@dimen/margin_medium"
+            android:layout_marginEnd="@dimen/margin_medium"
+            app:cpbText="Warning Enabled"
+            app:cpbType="warning"
+            app:cpbIcon="@drawable/ic_trash"
+            app:layout_constraintTop_toBottomOf="@+id/secondaryDisabled"/>
 
-    <com.google.android.material.switchmaterial.SwitchMaterial
-        android:id="@+id/switchMaterialEnabled"
-        android:layout_marginTop="@dimen/margin_large"
-        android:layout_marginStart="@dimen/margin_medium"
-        style="@style/CustomSwitch"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/warningDisabled"/>
+        <com.averin.android.developer.baseui.widget.CustomButton
+            android:id="@+id/warningDisabled"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:layout_marginStart="@dimen/margin_medium"
+            android:layout_marginEnd="@dimen/margin_medium"
+            app:cpbText="Warning Disabled"
+            app:cpbType="warning"
+            app:cpbIcon="@drawable/ic_trash"
+            app:isButtonEnabled="false"
+            app:layout_constraintTop_toBottomOf="@+id/warningEnabled"/>
 
-    <com.averin.android.developer.baseui.widget.CustomCheckBox
-        android:id="@+id/checkBoxEnabled"
-        style="@style/CustomCheckBox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="CheckBox 1"
-        android:layout_marginStart="@dimen/margin_medium"
-        app:layout_constraintStart_toEndOf="@+id/switchMaterialEnabled"
-        app:layout_constraintBottom_toBottomOf="@+id/switchMaterialEnabled" />
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/switchMaterialEnabled"
+            android:layout_marginTop="@dimen/margin_large"
+            android:layout_marginStart="@dimen/margin_medium"
+            style="@style/CustomSwitch"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/warningDisabled"/>
 
-    <com.averin.android.developer.baseui.widget.CustomCheckBox
-        android:id="@+id/checkBoxDisabled"
-        style="@style/CustomCheckBox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:enabled="false"
-        android:text="CheckBox 2"
-        android:layout_marginStart="@dimen/margin_medium"
-        app:layout_constraintStart_toEndOf="@+id/checkBoxEnabled"
-        app:layout_constraintBottom_toBottomOf="@+id/switchMaterialEnabled" />
-
-    <androidx.constraintlayout.widget.Barrier
-        android:id="@+id/checkBoxBarrier"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:barrierDirection="bottom"
-        app:constraint_referenced_ids="switchMaterialEnabled,checkBoxEnabled,checkBoxDisabled"/>
-
-    <androidx.appcompat.widget.AppCompatCheckBox
-        android:id="@+id/cbMultiselect1"
-        style="@style/MultiselectCheckBox"
-        android:layout_marginTop="@dimen/margin_large"
-        android:layout_marginStart="@dimen/margin_medium"
-        android:paddingStart="@dimen/margin_small"
-        android:text="Multiselect Option 1"
-        app:layout_constraintTop_toBottomOf="@+id/checkBoxBarrier"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <androidx.appcompat.widget.AppCompatCheckBox
-        android:id="@+id/cbMultiselect2"
-        style="@style/MultiselectCheckBox"
-        android:layout_marginTop="@dimen/margin_medium"
-        android:layout_marginStart="@dimen/margin_medium"
-        android:paddingStart="@dimen/margin_small"
-        android:text="Multiselect Option 2"
-        app:layout_constraintTop_toBottomOf="@+id/cbMultiselect1"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <RadioGroup
-        android:id="@+id/radioGroup"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginTop="@dimen/margin_large"
-        android:layout_marginStart="@dimen/margin_medium"
-        android:layout_marginEnd="@dimen/margin_medium"
-        app:layout_constraintTop_toBottomOf="@id/cbMultiselect2">
-
-        <com.averin.android.developer.baseui.widget.CustomRadioButton
-            android:id="@+id/rbRadioButton1"
+        <com.averin.android.developer.baseui.widget.CustomCheckBox
+            android:id="@+id/checkBoxEnabled"
+            style="@style/CustomCheckBox"
             android:layout_width="wrap_content"
-            android:text="RadioButton 1"
-            tools:drawableRight="@drawable/ic_suggestion"
-            android:drawableEnd="@drawable/ic_suggestion"
-            android:drawablePadding="@dimen/margin_small"
-            style="@style/CustomRadioButton" />
+            android:layout_height="wrap_content"
+            android:text="CheckBox 1"
+            android:layout_marginStart="@dimen/margin_medium"
+            app:layout_constraintStart_toEndOf="@+id/switchMaterialEnabled"
+            app:layout_constraintBottom_toBottomOf="@+id/switchMaterialEnabled" />
 
-        <com.averin.android.developer.baseui.widget.CustomRadioButton
-            android:id="@+id/rbRadioButton2"
-            android:text="RadioButton 2"
-            android:layout_marginTop="@dimen/margin_large"
-            style="@style/CustomRadioButton" />
-
-        <com.averin.android.developer.baseui.widget.CustomRadioButton
-            android:id="@+id/rbRadioButton3"
-            android:text="RadioButton 3"
-            android:layout_marginTop="@dimen/margin_large"
-            android:checked="true"
+        <com.averin.android.developer.baseui.widget.CustomCheckBox
+            android:id="@+id/checkBoxDisabled"
+            style="@style/CustomCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:enabled="false"
-            style="@style/CustomRadioButton"/>
-    </RadioGroup>
+            android:text="CheckBox 2"
+            android:layout_marginStart="@dimen/margin_medium"
+            app:layout_constraintStart_toEndOf="@+id/checkBoxEnabled"
+            app:layout_constraintBottom_toBottomOf="@+id/switchMaterialEnabled" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/checkBoxBarrier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="bottom"
+            app:constraint_referenced_ids="switchMaterialEnabled,checkBoxEnabled,checkBoxDisabled"/>
+
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/cbMultiselect1"
+            style="@style/MultiselectCheckBox"
+            android:layout_marginTop="@dimen/margin_large"
+            android:layout_marginStart="@dimen/margin_medium"
+            android:paddingStart="@dimen/margin_small"
+            android:text="Multiselect Option 1"
+            app:layout_constraintTop_toBottomOf="@+id/checkBoxBarrier"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/cbMultiselect2"
+            style="@style/MultiselectCheckBox"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:layout_marginStart="@dimen/margin_medium"
+            android:paddingStart="@dimen/margin_small"
+            android:text="Multiselect Option 2"
+            app:layout_constraintTop_toBottomOf="@+id/cbMultiselect1"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="@dimen/margin_large"
+            android:layout_marginStart="@dimen/margin_medium"
+            android:layout_marginEnd="@dimen/margin_medium"
+            app:layout_constraintTop_toBottomOf="@id/cbMultiselect2">
+
+            <com.averin.android.developer.baseui.widget.CustomRadioButton
+                android:id="@+id/rbRadioButton1"
+                android:layout_width="wrap_content"
+                android:text="RadioButton 1"
+                tools:drawableRight="@drawable/ic_suggestion"
+                android:drawableEnd="@drawable/ic_suggestion"
+                android:drawablePadding="@dimen/margin_small"
+                style="@style/CustomRadioButton" />
+
+            <com.averin.android.developer.baseui.widget.CustomRadioButton
+                android:id="@+id/rbRadioButton2"
+                android:text="RadioButton 2"
+                android:layout_marginTop="@dimen/margin_large"
+                style="@style/CustomRadioButton" />
+
+            <com.averin.android.developer.baseui.widget.CustomRadioButton
+                android:id="@+id/rbRadioButton3"
+                android:text="RadioButton 3"
+                android:layout_marginTop="@dimen/margin_large"
+                android:checked="true"
+                android:enabled="false"
+                style="@style/CustomRadioButton"/>
+        </RadioGroup>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

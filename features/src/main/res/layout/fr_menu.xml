@@ -41,14 +41,43 @@
         tools:text="Ralph Edwards"/>
 
     <TextView
-        android:id="@+id/tvLogout"
-        style="@style/MenuItem"
-        android:text="@string/menu_item_logout"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:drawableStartCompat="@drawable/ic_menu_logout"
-        tools:drawableStart="@drawable/ic_menu_logout" />
+        android:id="@+id/tvUserEmail"
+        style="@style/TextSecondary"
+        android:layout_margin="@dimen/margin_medium"
+        app:layout_constraintStart_toStartOf="@+id/ivAvatar"
+        app:layout_constraintEnd_toEndOf="@+id/ivAvatar"
+        app:layout_constraintTop_toBottomOf="@+id/tvUserName"
+        tools:text="averin.developer@gmail.com"/>
+
+    <TextView
+        android:id="@+id/tvUserLocation"
+        style="@style/TextPrimary"
+        android:layout_margin="@dimen/margin_medium"
+        app:layout_constraintStart_toStartOf="@+id/ivAvatar"
+        app:layout_constraintEnd_toEndOf="@+id/ivAvatar"
+        app:layout_constraintTop_toBottomOf="@+id/tvUserEmail"
+        tools:text="Dubai, UAE"/>
+
+    <TextView
+        android:id="@+id/tvUserCreated"
+        style="@style/TextSecondary"
+        android:textColor="@color/typography_placeholder"
+        android:layout_margin="@dimen/margin_medium"
+        android:textSize="@dimen/text_12"
+        app:layout_constraintStart_toStartOf="@+id/ivAvatar"
+        app:layout_constraintEnd_toEndOf="@+id/ivAvatar"
+        app:layout_constraintTop_toBottomOf="@+id/tvUserLocation"
+        tools:text="Since 11.12.1985"/>
+
+    <com.averin.android.developer.baseui.widget.CustomButton
+        android:id="@+id/btnLogout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_medium"
+        app:cpbType="secondary"
+        app:cpbText="@string/menu_item_logout"
+        app:cpbIcon="@drawable/ic_menu_logout"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
     <include
         android:id="@+id/loadingView"

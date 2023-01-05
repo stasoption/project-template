@@ -5,9 +5,12 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import by.kirich1409.viewbindingdelegate.viewBinding
+import com.averin.android.developer.auth.domain.model.UserResponse
 import com.averin.android.developer.base.extension.kotlin.showFullScreenImageUrl
+import com.averin.android.developer.base.util.toUIFormat
 import com.averin.android.developer.baseui.error.GlobalErrorHandler
 import com.averin.android.developer.baseui.extension.android.view.loadAvatar
+import com.averin.android.developer.baseui.extension.android.view.textOrHide
 import com.averin.android.developer.baseui.extension.androidx.fragment.app.onBackPressed
 import com.averin.android.developer.baseui.extension.androidx.fragment.app.supportFragmentManager
 import com.averin.android.developer.baseui.extension.androidx.lifecycle.observeSafe
@@ -16,7 +19,6 @@ import com.averin.android.developer.baseui.presentation.fragment.BaseErrorFragme
 import com.averin.android.developer.baseui.widget.CustomButton
 import com.averin.android.developer.dashboard.R
 import com.averin.android.developer.dashboard.databinding.FrMenuBinding
-import com.averin.android.developer.settings.domain.model.UserInfo
 import com.averin.android.developer.settings.navigation.SettingsNavigation
 import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -32,14 +34,14 @@ class MenuFragment : BaseErrorFragment(R.layout.fr_menu) {
         onBackPressed { onBackPressed() }
 
         binding.run {
-            tvLogout.setOnClickListener { onLogoutClick() }
+            btnLogout.onClickListener = { onLogoutClick() }
         }
 
         viewModel.run {
             getUserInfoEvent.observeSafe(viewLifecycleOwner) { obtainUserData(it) }
-            logoutSuccessEvent.observe(viewLifecycleOwner) { error ->
+            logoutSuccessEvent.observe(viewLifecycleOwner) { isLogout ->
                 loadingBinding.loadingView.isVisible = false
-                logoutOrError(error)
+                logoutOrError(isLogout)
             }
         }
 
@@ -50,14 +52,17 @@ class MenuFragment : BaseErrorFragment(R.layout.fr_menu) {
         viewModel.getUserInfo()
     }
 
-    private fun obtainUserData(userInfoResponse: UserInfo) {
+    private fun obtainUserData(userInfo: UserResponse) {
         loadingBinding.loadingView.isVisible = false
-        binding.ivAvatar.loadAvatar(userInfoResponse.imgUrl)
+        binding.ivAvatar.loadAvatar(userInfo.avatarUrl)
         binding.ivAvatar.setOnClickListener {
-            userInfoResponse.imgUrl.showFullScreenImageUrl(activity as AppCompatActivity)
+            userInfo.avatarUrl.showFullScreenImageUrl(activity as AppCompatActivity)
         }
 
-        binding.tvUserName.text = userInfoResponse.fullName
+        binding.tvUserName.text = userInfo.name
+        binding.tvUserEmail.textOrHide(userInfo.email)
+        binding.tvUserLocation.textOrHide(userInfo.location)
+        binding.tvUserCreated.textOrHide(userInfo.createdAt)
     }
 
     private fun onLogoutClick() {
@@ -79,12 +84,12 @@ class MenuFragment : BaseErrorFragment(R.layout.fr_menu) {
         }.show(supportFragmentManager(), DoubleActionBottomSheet::class.java.name)
     }
 
-    private fun logoutOrError(error: String?) {
-        if (error == null) {
+    private fun logoutOrError(isLogout: Boolean) {
+        if (isLogout) {
             navigation.openLogin()
         } else {
             GlobalErrorHandler(errorView).apply {
-                handleError(Exception(error))
+                handleError(Exception(getString(R.string.unexpected_error)))
             }
         }
     }

@@ -44,7 +44,7 @@ class FlowPreferences(
 
     companion object {
         private const val VERSION_KEY = "__VERSION__"
-        const val ARG_USER_EMAIL = "ARG_USER_EMAIL"
+        const val ARG_GITHUB_USER_NAME = "ARG_GITHUB_USER_NAME"
     }
 
     inner class Property<T : Any>(

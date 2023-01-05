@@ -3,9 +3,9 @@ package com.averin.android.developer.customview.presentation.tabs
 import android.os.Bundle
 import android.view.View
 import by.kirich1409.viewbindingdelegate.viewBinding
-import com.averin.android.developer.base.util.convertFormats
+import com.averin.android.developer.base.util.toUIFormat
 import com.averin.android.developer.baseui.extension.android.content.showToast
-import com.averin.android.developer.baseui.extension.android.view.showBirthdayDatePicker
+import com.averin.android.developer.baseui.extension.android.view.showDatePicker
 import com.averin.android.developer.baseui.extension.androidx.fragment.app.supportFragmentManager
 import com.averin.android.developer.baseui.presentation.BaseViewModel
 import com.averin.android.developer.baseui.presentation.fragment.BaseFragment
@@ -30,7 +30,7 @@ class Tab1Fragment : BaseFragment(R.layout.fr_tab_1) {
             * InputView
             * */
             inputView.init {
-                Timber.e("InputView=$it")
+                Timber.d("InputView=$it")
             }
             inputView.bindLabelSuggestion {
                 context?.showToast("Field suggestion")
@@ -48,21 +48,21 @@ class Tab1Fragment : BaseFragment(R.layout.fr_tab_1) {
             * MoneyView
             * */
             moneyView.init { source, formatted ->
-                Timber.e("sourceAmount=$source, formattedAmount=$formatted")
+                Timber.d("sourceAmount=$source, formattedAmount=$formatted")
             }
 
             /*
             * PasswordInputView
             * */
             inputView.init {
-                Timber.e("password=$it")
+                Timber.d("password=$it")
             }
 
             /*
             * InputBox
             * */
             inputBox.init {
-                Timber.e("InputBox=$it")
+                Timber.d("InputBox=$it")
             }
             inputBox.showError("Example of error")
 
@@ -73,15 +73,14 @@ class Tab1Fragment : BaseFragment(R.layout.fr_tab_1) {
                 onQueryChangeListener = { query -> Timber.e(query) }
                 onClearClickListener = { }
             }
-
         }
     }
 
     private fun chooseBirthday() {
-        binding.selectView.showBirthdayDatePicker(
+        binding.selectView.showDatePicker(
             fragmentManager = supportFragmentManager(),
             onDateSelected = {
-                binding.selectView.textValue = it.convertFormats()
+                binding.selectView.textValue = it.toUIFormat()
             }
         )
     }

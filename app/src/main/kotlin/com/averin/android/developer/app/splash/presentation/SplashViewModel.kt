@@ -8,6 +8,6 @@ class SplashViewModel(private val loginInteractor: LoginInteractor) : BaseViewMo
     val navigateToNextActivity = SingleLiveEvent<Boolean>()
 
     fun timerFinish() {
-        navigateToNextActivity.value = !loginInteractor.loginToken.isNullOrEmpty()
+        navigateToNextActivity.value = !loginInteractor.gitHubUserName.isNullOrEmpty()
     }
 }

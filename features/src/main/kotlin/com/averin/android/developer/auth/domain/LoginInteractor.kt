@@ -2,11 +2,11 @@ package com.averin.android.developer.auth.domain
 
 class LoginInteractor(private val loginRepository: LoginRepository) {
 
-    var loginToken: String?
-        get() = loginRepository.loginToken
-        set(loginToken) {
-            loginRepository.loginToken = loginToken
+    var gitHubUserName: String?
+        get() = loginRepository.gitHubUserName
+        set(userName) {
+            loginRepository.gitHubUserName = userName
         }
 
-    suspend fun login(username: String, password: String) = loginRepository.login(username, password)
+    suspend fun loadProfile(username: String) = loginRepository.loadProfile(username)
 }

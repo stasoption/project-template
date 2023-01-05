@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity(R.layout.ac_main) {
         val isAuthorized = if (intent.hasExtra(AUTHORIZED_EXTRA)) {
             intent.getBooleanExtra(AUTHORIZED_EXTRA, false)
         } else {
-            viewModel.loginToken != null
+            viewModel.gitHubUserName != null
         }
 
         if (savedInstanceState == null) {
@@ -46,7 +46,6 @@ class MainActivity : AppCompatActivity(R.layout.ac_main) {
 
     companion object {
         const val AUTHORIZED_EXTRA = "AUTHORIZED_EXTRA"
-
         fun makeIntent(context: Context, authorized: Boolean) = Intent(context, MainActivity::class.java).apply {
             putExtra(AUTHORIZED_EXTRA, authorized)
         }

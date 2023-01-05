@@ -11,11 +11,8 @@ import androidx.annotation.DrawableRes
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.FragmentManager
-import com.averin.android.developer.base.util.convertFormats
 import com.averin.android.developer.base.util.dateNow
-import com.averin.android.developer.base.util.fromServerToDateTimeFormat
 import com.averin.android.developer.base.util.fromUiToDateTimeFormat
-import com.averin.android.developer.base.util.toServerFormat
 import com.averin.android.developer.baseui.presentation.dialog.DatePickerDialogFragment
 import com.averin.android.developer.baseui.widget.field.CustomSelectView
 import org.joda.time.DateTime
@@ -40,7 +37,7 @@ fun View.doOnApplyWindowInsets(block: (View, insets: WindowInsetsCompat, initial
     requestApplyInsetsWhenAttached()
 }
 
-fun CustomSelectView.showBirthdayDatePicker(
+fun CustomSelectView.showDatePicker(
     fragmentManager: FragmentManager,
     onDateSelected: ((dateTime: DateTime) -> Unit)
 ) {
@@ -52,44 +49,6 @@ fun CustomSelectView.showBirthdayDatePicker(
         dialogMinDate = dateNow.minusYears(MIN_DATE_PICKER_DATE).millis,
         dialogMaxDate = dateNow.millis,
         listener = { onDateSelected.invoke(it) }
-    )
-}
-
-fun showExperienceDatePicker(
-    fragmentManager: FragmentManager,
-    initialDate: String,
-    onDateSelected: ((dateTime: DateTime) -> Unit)
-) {
-    DatePickerDialogFragment.show(
-        fm = fragmentManager,
-        dialogInitialDate = initialDate.fromServerToDateTimeFormat() ?: dateNow,
-        dialogMinDate = dateNow.minusYears(100).millis,
-        dialogMaxDate = dateNow.millis,
-        listener = { onDateSelected.invoke(it) }
-    )
-}
-
-fun CustomSelectView.showVacancyDatePicker(
-    fragmentManager: FragmentManager,
-    onDateSelected: ((serverFormatDate: String) -> Unit),
-    onDateError: (() -> Unit)? = null
-) {
-    val dialogInitialDate: DateTime = this.textValue.fromUiToDateTimeFormat() ?: dateNow
-    DatePickerDialogFragment.show(
-        fm = fragmentManager,
-        dialogInitialDate = dialogInitialDate,
-        dialogMinDate = dateNow.minusYears(100).millis,
-        dialogMaxDate = dateNow.plusYears(100).millis,
-        listener = { dateTime ->
-            dateTime.toServerFormat()?.let { selectedDate ->
-                onDateSelected.invoke(selectedDate)
-            }
-            dateTime.convertFormats()?.let { date ->
-                textValue = date
-            } ?: run {
-                onDateError?.invoke()
-            }
-        }
     )
 }
 

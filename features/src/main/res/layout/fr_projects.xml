@@ -6,10 +6,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/window_background">
 
-    <com.averin.android.developer.baseui.widget.toolbar.CustomToolbar
+    <TextView
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/size_56"
+        style="@style/CustomToolbarText"
+        android:gravity="center_vertical"
+        android:text="@string/gitHub_projects"
         app:layout_constraintTop_toTopOf="parent"/>
 
     <com.averin.android.developer.github.presentation.widget.GitHubProjectsView

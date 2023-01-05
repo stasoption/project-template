@@ -4,6 +4,6 @@ import com.averin.android.developer.auth.domain.LoginInteractor
 import com.averin.android.developer.baseui.presentation.BaseViewModel
 
 class MainViewModel(private val loginInteractor: LoginInteractor) : BaseViewModel() {
-    val loginToken: String?
-        get() = loginInteractor.loginToken
+    val gitHubUserName: String?
+        get() = loginInteractor.gitHubUserName
 }

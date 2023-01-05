@@ -12,6 +12,6 @@ import retrofit2.Retrofit
 val settingsModule = module {
     single { get<Retrofit>().create(SettingsApi::class.java) }
     single<SettingsRepository> { SettingsRepositoryImpl(get(), get(), get()) }
-    factory { SettingsInteractor(get(), get()) }
-    viewModel { MenuViewModel(get(), get()) }
+    factory { SettingsInteractor(get()) }
+    viewModel { MenuViewModel(get()) }
 }

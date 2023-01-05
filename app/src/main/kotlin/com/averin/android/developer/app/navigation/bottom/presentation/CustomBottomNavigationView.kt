@@ -90,7 +90,7 @@ class CustomBottomNavigationView(context: Context, attrs: AttributeSet) : FrameL
             /* whole navigation panel end */
 
             /* select first item by default start */
-            setCurrentTab(TAB_3)
+            setCurrentTab(TAB_1)
             /* select first item by default end */
         } finally {
             a.recycle()

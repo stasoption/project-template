@@ -15,8 +15,8 @@
 
         <ImageView
             android:id="@+id/ivLogo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/size_100"
+            android:layout_height="@dimen/size_100"
             android:src="@mipmap/ic_launcher"
             android:adjustViewBounds="true"
             android:layout_margin="@dimen/margin_medium"
@@ -36,29 +36,21 @@
             app:layout_constraintTop_toBottomOf="@+id/ivLogo"/>
 
         <com.averin.android.developer.baseui.widget.field.CustomInputView
-            android:id="@+id/etLogin"
+            android:id="@+id/etUserName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/margin_medium"
             android:layout_marginTop="@dimen/margin_large"
             app:cpiInputType="name"
-            app:cpiLabel="@string/login_email_hint"
+            app:cpiLabel="@string/login_username_hint"
             app:cpiHint="@string/hint_email"
             app:layout_constraintTop_toBottomOf="@+id/tvSignInTitle"/>
-
-        <com.averin.android.developer.baseui.widget.field.PasswordInputView
-            android:id="@+id/etPassword"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_small"
-            android:layout_marginHorizontal="@dimen/margin_medium"
-            app:layout_constraintTop_toBottomOf="@+id/etLogin"/>
 
         <View
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginBottom="@dimen/margin_medium"
-            app:layout_constraintTop_toBottomOf="@+id/etPassword"
+            app:layout_constraintTop_toBottomOf="@+id/etUserName"
             app:layout_constraintBottom_toTopOf="@+id/loginBtn"/>
 
         <com.averin.android.developer.baseui.widget.CustomButton

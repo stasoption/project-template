@@ -1,4 +1,4 @@
-package com.averin.android.developer.github.presentation.vacancies
+package com.averin.android.developer.github.presentation.projects
 
 import android.view.View
 import android.view.ViewGroup
@@ -22,6 +22,10 @@ class ProjectsAdapter(
         private val binding by viewBinding(LiGithubProjectBinding::bind)
         override fun bindData(position: Int) {
             val project = items[position]
+            binding.run {
+                tvProjectName.text = project.fullName
+                tvProjectVisibility.text = project.visibility
+            }
         }
     }
 

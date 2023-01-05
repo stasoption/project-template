@@ -11,6 +11,7 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 
 @SuppressLint("CustomSplashScreen")
 class SplashActivity : AppCompatActivity(R.layout.ac_splash) {
+
     private val viewModel: SplashViewModel by viewModel()
     private var timer: CountDownTimer? = null
     private var timerFinished: Boolean = false

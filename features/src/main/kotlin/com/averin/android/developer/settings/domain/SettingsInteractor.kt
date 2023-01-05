@@ -1,15 +1,16 @@
 package com.averin.android.developer.settings.domain
 
-import com.averin.android.developer.auth.domain.LoginRepository
+import com.averin.android.developer.auth.domain.model.UserResponse
+
 
 class SettingsInteractor(
-    private val settingsRepository: SettingsRepository,
-    private val loginRepository: LoginRepository,
+    private val settingsRepository: SettingsRepository
 ) {
-    var loginToken: String?
-        get() = loginRepository.loginToken
-        set(loginToken) {
-            loginRepository.loginToken = loginToken
+    var githubUserName: String?
+        get() = settingsRepository.githubUserName
+        set(userName) {
+            settingsRepository.githubUserName = userName
         }
-    suspend fun logout() = loginRepository.logout()
+
+    suspend fun loadProfile(): UserResponse? = settingsRepository.loadProfile()
 }

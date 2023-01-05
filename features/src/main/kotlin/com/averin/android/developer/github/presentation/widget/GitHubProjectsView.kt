@@ -15,7 +15,7 @@ import com.averin.android.developer.baseui.widget.recycler.decoration.DividerIte
 import com.averin.android.developer.dashboard.R
 import com.averin.android.developer.dashboard.databinding.WProjectsBinding
 import com.averin.android.developer.github.domain.model.GitHubProject
-import com.averin.android.developer.github.presentation.vacancies.ProjectsAdapter
+import com.averin.android.developer.github.presentation.projects.ProjectsAdapter
 import com.facebook.shimmer.ShimmerFrameLayout
 
 class GitHubProjectsView(context: Context, attrs: AttributeSet) : FrameLayout(context, attrs) {

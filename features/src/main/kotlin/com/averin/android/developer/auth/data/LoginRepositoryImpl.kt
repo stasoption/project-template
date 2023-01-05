@@ -5,10 +5,10 @@ import com.averin.android.developer.auth.data.source.LoginApi
 import com.averin.android.developer.auth.domain.LoginRepository
 import com.averin.android.developer.auth.domain.model.UserResponse
 import com.averin.android.developer.base.util.FlowPreferences
+import com.averin.android.developer.base.util.FlowPreferences.Companion.ARG_GITHUB_USER_NAME
 import com.averin.android.developer.core.BuildConfig.KEY_AUTH_LOGIN_TOKEN
 import com.averin.android.developer.core.BuildConfig.PREFERENCES_VERSION
 import com.squareup.moshi.Moshi
-import okhttp3.Credentials
 
 class LoginRepositoryImpl(
     private val loginApi: LoginApi,
@@ -23,10 +23,9 @@ class LoginRepositoryImpl(
         fallbackToDestructiveMigration = true
     )
 
-    override var loginToken by prefs[KEY_AUTH_LOGIN_TOKEN, String::class]
+    override var gitHubUserName by prefs[ARG_GITHUB_USER_NAME, String::class]
 
-    override suspend fun login(username: String, password: String): UserResponse {
-        return loginApi.login(Credentials.basic(username, password))
+    override suspend fun loadProfile(username: String): UserResponse {
+        return loginApi.loadProfile(username.trim())
     }
-    override suspend fun logout() = loginApi.logout()
 }

@@ -119,8 +119,8 @@ object JsonDependencies {
 
 object NetworkDependencies {
     object Versions {
-        const val retrofit = "2.8.1"
-        const val okHttp = "4.9.1"
+        const val retrofit = "2.9.0"
+        const val okHttp = "4.10.0"
     }
 
     const val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"
