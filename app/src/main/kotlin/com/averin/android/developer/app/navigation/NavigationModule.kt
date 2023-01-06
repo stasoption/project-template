@@ -7,21 +7,21 @@ import com.averin.android.developer.app.navigation.bottom.presentation.BottomNav
 import com.averin.android.developer.app.navigation.delegates.AuthNavigationDelegate
 import com.averin.android.developer.app.navigation.delegates.BottomNavigationDelegate
 import com.averin.android.developer.app.navigation.delegates.CustomViewsNavigationDelegate
-import com.averin.android.developer.app.navigation.delegates.BottomTab4NavigationDelegate
+import com.averin.android.developer.app.navigation.delegates.MediaNavigationDelegate
 import com.averin.android.developer.app.navigation.delegates.ComposeNavigationDelegate
 import com.averin.android.developer.app.navigation.delegates.SettingsNavigationDelegate
-import com.averin.android.developer.app.navigation.delegates.GitHubNavigationDelegate
+import com.averin.android.developer.app.navigation.delegates.GitHubProjectNavigationDelegate
 import com.averin.android.developer.auth.navigation.AuthNavControllerStorage
 import com.averin.android.developer.auth.navigation.AuthNavigation
 import com.averin.android.developer.compose.navigation.ComposeNavControllerStorage
 import com.averin.android.developer.compose.navigation.ComposeNavigation
-import com.averin.android.developer.bottomtab4.navigation.BottomTab4NavControllerStorage
-import com.averin.android.developer.bottomtab4.navigation.BottomTab4Navigation
+import com.averin.android.developer.media.navigation.MediaNavControllerStorage
+import com.averin.android.developer.media.navigation.MediaNavigation
 import com.averin.android.developer.customview.navigation.CustomViewsNavControllerStorage
 import com.averin.android.developer.customview.navigation.CustomViewsNavigation
 import com.averin.android.developer.settings.navigation.SettingsNavControllerStorage
 import com.averin.android.developer.settings.navigation.SettingsNavigation
-import com.averin.android.developer.github.navigation.GitHubNavControllerStorage
+import com.averin.android.developer.github.navigation.GitHubProjectNavControllerStorage
 import com.averin.android.developer.github.navigation.GitHubNavigation
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
@@ -33,8 +33,8 @@ val navigationModule = module {
     single<AuthNavigation> { AuthNavigationDelegate(get()) }
 
     /* Tabs start */
-    single { GitHubNavControllerStorage() }
-    single<GitHubNavigation> { GitHubNavigationDelegate(get()) }
+    single { GitHubProjectNavControllerStorage() }
+    single<GitHubNavigation> { GitHubProjectNavigationDelegate(get()) }
 
     single { CustomViewsNavControllerStorage() }
     single<CustomViewsNavigation> { CustomViewsNavigationDelegate(get()) }
@@ -42,8 +42,8 @@ val navigationModule = module {
     single { ComposeNavControllerStorage() }
     single<ComposeNavigation> { ComposeNavigationDelegate(get()) }
 
-    single { BottomTab4NavControllerStorage() }
-    single<BottomTab4Navigation> { BottomTab4NavigationDelegate(get()) }
+    single { MediaNavControllerStorage() }
+    single<MediaNavigation> { MediaNavigationDelegate(get()) }
 
     single { SettingsNavControllerStorage() }
     single<SettingsNavigation> { SettingsNavigationDelegate(get(), get()) }

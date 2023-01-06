@@ -81,14 +81,18 @@
     <string name="assign_to_vacancy">Assign to vacancy</string>
     <!-- Projects end -->
 
-    <!-- Cloud start -->
+    <!-- Custom Views start -->
+    <string name="custom_views">Custom Views</string>
+    <!-- Custom Views end -->
+
+    <!-- Media start -->
     <string name="time_sec_left">%s sec left</string>
     <string name="time_left">%s left</string>
     <string name="file_has_been_downloading">File has been downloading…</string>
-    <!-- Cloud end -->
+    <!-- Media end -->
 
-    <!-- Menu start -->
+    <!-- Profile start -->
     <string name="menu_item_logout">Log out</string>
     <string name="ask_for_logout">Are you sure you want to log out?</string>
-    <!-- Menu end -->
+    <!-- Profile end -->
 </resources>

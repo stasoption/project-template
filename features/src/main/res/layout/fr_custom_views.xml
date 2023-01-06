@@ -10,7 +10,7 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cptTitle="Custom Views"
+        app:cptTitle="@string/custom_views"
         app:layout_constraintTop_toTopOf="parent"/>
 
     <com.averin.android.developer.baseui.widget.CustomSegmentedView

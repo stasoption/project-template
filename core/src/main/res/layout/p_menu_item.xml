@@ -10,8 +10,7 @@
         style="@style/MenuItem"
         android:gravity="center_vertical"
         tools:text="@string/assign_to_vacancy"
-        tools:drawableStart="@drawable/ic_assign_to_vacancy"
-        app:drawableTint="@color/textColorSecondary" />
+        tools:drawableStart="@drawable/ic_debug_placeholder" />
 
     <include
         android:layout_width="match_parent"

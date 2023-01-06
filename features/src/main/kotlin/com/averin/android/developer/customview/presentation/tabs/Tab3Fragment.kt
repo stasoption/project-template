@@ -84,15 +84,6 @@ class Tab3Fragment : BaseFragment(R.layout.fr_tab_3) {
             }
 
             /*
-            * ImagePicker
-            * */
-            imagePicker.apply {
-                requiredFragmentManager = supportFragmentManager()
-                onPickImageClickAction = { chooseImageFromGallery() }
-                imagePicker.onRemoveImageClickAction = { removePhoto() }
-            }
-
-            /*
             * TagsView
             * */
             tagsView.apply {
@@ -115,18 +106,6 @@ class Tab3Fragment : BaseFragment(R.layout.fr_tab_3) {
                 })
             }
         }
-    }
-
-    override fun onImageSelected(imagePath: String?) {
-        imagePath?.let { path ->
-            val file = File(path)
-            // Send the file to a Server, save to viewModel etc
-            binding.imagePicker.imageUri = Uri.fromFile(file)
-        }
-    }
-
-    private fun removePhoto() {
-        // Remove from viewModel, Server etc
     }
 
     companion object {

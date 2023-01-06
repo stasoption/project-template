@@ -2,7 +2,7 @@ package com.averin.android.developer.app.main.navigation
 
 import androidx.fragment.app.Fragment
 import com.averin.android.developer.app.navigation.bottom.presentation.CustomBottomNavigationView
-import com.averin.android.developer.bottomtab4.navigation.BottomTab4FlowFragment
+import com.averin.android.developer.media.navigation.MediaFlowFragment
 import com.averin.android.developer.compose.navigation.ComposeFlowFragment
 import com.averin.android.developer.customview.navigation.CustomViewsFlowFragment
 import com.averin.android.developer.github.navigation.GitHubFlowFragment
@@ -37,10 +37,10 @@ object BottomTab3 : BottomTab(
 }
 
 object BottomTab4 : BottomTab(
-    BottomTab4FlowFragment::class.java.name,
+    MediaFlowFragment::class.java.name,
     CustomBottomNavigationView.TAB_4
 ) {
-    override fun createFragment() = BottomTab4FlowFragment()
+    override fun createFragment() = MediaFlowFragment()
 }
 
 object BottomTab5 : BottomTab(

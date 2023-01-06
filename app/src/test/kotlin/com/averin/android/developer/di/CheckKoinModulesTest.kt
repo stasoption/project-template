@@ -11,7 +11,7 @@ import com.averin.android.developer.auth.authModule
 import com.averin.android.developer.base.baseModule
 import com.averin.android.developer.baseui.presentation.bottomsheet.webview.webViewModule
 import com.averin.android.developer.customview.customViewsModule
-import com.averin.android.developer.bottomtab4.bottomTab4Module
+import com.averin.android.developer.media.mediaModule
 import com.averin.android.developer.compose.composeModule
 import com.averin.android.developer.settings.settingsModule
 import com.averin.android.developer.github.gitHubProjectsModule
@@ -44,7 +44,7 @@ class CheckKoinModulesTest : KoinTest {
             modules(
                 listOf(
                     appModule, webViewModule, restModule, navigationModule, baseModule, splashModule, mainModule, authModule,
-                    gitHubProjectsModule, customViewsModule, composeModule, bottomTab4Module, settingsModule
+                    gitHubProjectsModule, customViewsModule, composeModule, mediaModule, settingsModule
                 )
             )
         }

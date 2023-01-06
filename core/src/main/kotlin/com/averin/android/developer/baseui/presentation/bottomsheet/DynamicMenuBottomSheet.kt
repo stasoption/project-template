@@ -49,7 +49,6 @@ class DynamicMenuBottomSheet : BaseBottomSheetDialog() {
                     null
                 }
                 setCompoundDrawablesWithIntrinsicBounds(iconRes, null, null, null)
-                setDrawableTintColor(context.getColorKtx(R.color.textColorSecondary))
             }
             ltMenuItems.addView(menuView)
         }

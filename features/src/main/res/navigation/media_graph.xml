@@ -3,11 +3,11 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/bottom_tab_4_graph"
+    android:id="@+id/media_graph"
     app:startDestination="@id/bottomTab4Fragment">
 
     <fragment
         android:id="@+id/bottomTab4Fragment"
-        android:name="com.averin.android.developer.bottomtab4.presentation.BottomTab4Fragment"
-        tools:layout="@layout/fr_bottom_tab_4"/>
+        android:name="com.averin.android.developer.media.presentation.MediaFragment"
+        tools:layout="@layout/fr_media"/>
 </navigation>

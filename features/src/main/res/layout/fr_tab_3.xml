@@ -21,17 +21,6 @@
             app:searchPanelHint="@string/search"
             app:layout_constraintTop_toTopOf="parent"/>
 
-        <com.averin.android.developer.baseui.widget.imagepicker.CustomImagePicker
-            android:id="@+id/imagePicker"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_medium"
-            android:layout_marginStart="@dimen/margin_medium"
-            android:layout_marginEnd="@dimen/margin_medium"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/searchToolbar"/>
-
         <com.averin.android.developer.baseui.widget.CustomSegmentedView
             android:id="@+id/segmentedButtonView"
             android:layout_width="match_parent"
@@ -42,7 +31,7 @@
             app:cpsbLeftText="Tab 1"
             app:cpsbCentralText="Tab 2"
             app:cpsbRightText="Tab 3"
-            app:layout_constraintTop_toBottomOf="@+id/imagePicker"/>
+            app:layout_constraintTop_toBottomOf="@+id/searchToolbar"/>
 
         <com.averin.android.developer.baseui.widget.CustomToggleView
             android:id="@+id/toggleView"
