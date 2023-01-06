@@ -4,16 +4,6 @@
     <string name="template_middle_text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</string>
     <string name="template_long_text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</string>
 
-    <!-- examples start -->
-    <string name="example_menu_double_action">Double action dialog</string>
-    <string name="example_menu_single_action">Single action dialog</string>
-    <string name="example_menu_simple_dialog">Simple message dialog</string>
-    <string name="example_menu_warning_dialog">Warning dialog</string>
-    <string name="example_menu_full_screen_message">Full screen message dialog</string>
-    <string name="tab_fields">Fields</string>
-    <string name="tab_buttons">Buttons</string>
-    <!-- examples end -->
-
     <!-- errors start -->
     <string name="error_network">No connection</string>
     <string name="no_internet">No internet</string>
@@ -83,6 +73,13 @@
 
     <!-- Custom Views start -->
     <string name="custom_views">Custom Views</string>
+    <string name="example_menu_double_action">Double action dialog</string>
+    <string name="example_menu_single_action">Single action dialog</string>
+    <string name="example_menu_simple_dialog">Simple message dialog</string>
+    <string name="example_menu_warning_dialog">Warning dialog</string>
+    <string name="example_menu_full_screen_message">Full screen message dialog</string>
+    <string name="tab_fields">Fields</string>
+    <string name="tab_buttons">Buttons</string>
     <!-- Custom Views end -->
 
     <!-- Media start -->
