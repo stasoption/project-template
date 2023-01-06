@@ -60,6 +60,7 @@ class VideoPlayerActivity : AppCompatActivity(R.layout.ac_video_player), Player.
                 R.drawable.img_play_button
             }
             centralPlayPauseButton.setImageResource(centralIcon)
+            centralPlayPauseButton.isVisible = !value
 
             if (value) {
                 player.playWhenReady = true
@@ -122,10 +123,6 @@ class VideoPlayerActivity : AppCompatActivity(R.layout.ac_video_player), Player.
         error.cause?.let { throwable ->
             Timber.e(throwable)
         }
-    }
-
-    override fun onPlayWhenReadyChanged(playWhenReady: Boolean, reason: Int) {
-        centralPlayPauseButton.isVisible = !playWhenReady
     }
 
     override fun onEvents(player: Player, events: Player.Events) {
