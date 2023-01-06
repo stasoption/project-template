@@ -62,6 +62,7 @@
     <!-- Login start -->
     <string name="login_username_hint">GitHub username</string>
     <string name="login">Log in</string>
+    <string name="enter_without_login">Let me in without login</string>
     <!-- Login end -->
 
     <!-- Projects start -->

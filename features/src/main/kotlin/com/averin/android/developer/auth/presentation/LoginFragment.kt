@@ -31,9 +31,16 @@ class LoginFragment : BaseErrorFragment(R.layout.fr_login) {
                     viewModel.loadProfile()
                 }
             }
+
+            tvLetMeIn.setOnClickListener {
+                viewModel.loginWithMyPersonalUserName()
+            }
         }
 
         viewModel.userResponseLiveData.observeSafe(viewLifecycleOwner) {
+            navigation.openDashboard()
+        }
+        viewModel.loginWithoutLoginEvent.observe(viewLifecycleOwner) {
             navigation.openDashboard()
         }
     }
