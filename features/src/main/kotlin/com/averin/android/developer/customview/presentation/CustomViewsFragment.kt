@@ -7,12 +7,7 @@ import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentStatePagerAdapter
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.averin.android.developer.baseui.extension.android.content.showToast
-import com.averin.android.developer.baseui.extension.androidx.fragment.app.hideKeyBoard
-import com.averin.android.developer.baseui.extension.androidx.fragment.app.onBackPressed
-import com.averin.android.developer.baseui.extension.androidx.fragment.app.showDialogWithAction
-import com.averin.android.developer.baseui.extension.androidx.fragment.app.showMessageDialog
-import com.averin.android.developer.baseui.extension.androidx.fragment.app.showWarningDialog
-import com.averin.android.developer.baseui.extension.androidx.fragment.app.supportFragmentManager
+import com.averin.android.developer.baseui.extension.androidx.fragment.app.*
 import com.averin.android.developer.baseui.presentation.BaseViewModel
 import com.averin.android.developer.baseui.presentation.bottomsheet.DoubleActionBottomSheet
 import com.averin.android.developer.baseui.presentation.bottomsheet.DynamicMenuBottomSheet
@@ -20,9 +15,9 @@ import com.averin.android.developer.baseui.presentation.bottomsheet.MessageOnFul
 import com.averin.android.developer.baseui.presentation.fragment.BaseFragment
 import com.averin.android.developer.baseui.widget.CustomButton
 import com.averin.android.developer.baseui.widget.CustomSegmentedView
-import com.averin.android.developer.customview.presentation.tabs.Tab3Fragment
-import com.averin.android.developer.customview.presentation.tabs.Tab2Fragment
 import com.averin.android.developer.customview.presentation.tabs.Tab1Fragment
+import com.averin.android.developer.customview.presentation.tabs.Tab2Fragment
+import com.averin.android.developer.customview.presentation.tabs.Tab3Fragment
 import com.averin.android.developer.dashboard.R
 import com.averin.android.developer.dashboard.databinding.FrCustomViewsBinding
 
@@ -40,7 +35,7 @@ class CustomViewsFragment : BaseFragment(R.layout.fr_custom_views) {
                 onBackClickListener = {
                     onBackPressed()
                 }
-                linkText = "Menu"
+                linkText = getString(R.string.toolbar_menu)
                 onLinkClickListener = { showDynamicMenuDialog() }
             }
             toggleView.apply {

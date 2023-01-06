@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/window_background"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/window_background">
+    android:orientation="vertical">
 
     <com.averin.android.developer.baseui.widget.toolbar.CustomToolbar
         android:id="@+id/toolbar"
@@ -13,77 +15,110 @@
         app:layout_constraintTop_toTopOf="parent"
         app:cptTitle="@string/media_title"/>
 
-    <TextView
-        android:id="@+id/tvImagePicker"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        style="@style/MainTitle"
-        android:text="@string/image_picker"
-        android:layout_marginTop="@dimen/margin_medium"
-        android:layout_marginStart="@dimen/margin_medium"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar"/>
-
-    <com.averin.android.developer.baseui.widget.imagepicker.CustomImagePicker
-        android:id="@+id/imagePicker"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_medium"
-        android:layout_marginStart="@dimen/margin_medium"
-        android:layout_marginEnd="@dimen/margin_medium"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvImagePicker"/>
-
-    <TextView
-        android:id="@+id/tvFilePicker"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        style="@style/MainTitle"
-        android:text="@string/file_picker"
-        android:layout_marginTop="@dimen/margin_medium"
-        android:layout_marginStart="@dimen/margin_medium"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imagePicker"/>
-
-    <TextView
-        android:id="@+id/tvSelectedFile"
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        style="@style/TextSecondary"
-        android:layout_margin="@dimen/margin_medium"
-        app:layout_constraintTop_toBottomOf="@+id/tvFilePicker"
-        tools:text="selected_file.pdf"/>
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:overScrollMode="never"
+        android:fillViewport="true">
 
-    <com.averin.android.developer.baseui.widget.CustomButton
-        android:id="@+id/btnSelectFile"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/margin_medium"
-        app:cpbType="secondary"
-        app:cpbText="@string/select_file"
-        app:cpbIcon="@drawable/ic_attach"
-        app:layout_constraintTop_toBottomOf="@+id/tvSelectedFile"/>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/margin_medium"
+            android:paddingBottom="@dimen/margin_large">
 
-    <TextView
-        android:id="@+id/tvVideoPlayer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        style="@style/MainTitle"
-        android:text="@string/video_player"
-        android:layout_marginTop="@dimen/margin_large"
-        android:layout_marginStart="@dimen/margin_medium"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnSelectFile"/>
+            <TextView
+                android:id="@+id/tvImagePicker"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/MainTitle"
+                android:text="@string/image_picker"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:layout_marginStart="@dimen/margin_medium"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/toolbar"/>
 
-    <com.averin.android.developer.baseui.widget.CustomButton
-        android:id="@+id/btnOpenVideoPlayer"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/margin_medium"
-        app:cpbType="secondary"
-        app:cpbText="@string/play_video"
-        app:cpbIcon="@drawable/ic_play"
-        app:layout_constraintTop_toBottomOf="@+id/tvVideoPlayer"/>
+            <com.averin.android.developer.baseui.widget.imagepicker.CustomImagePicker
+                android:id="@+id/imagePicker"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:layout_marginStart="@dimen/margin_medium"
+                android:layout_marginEnd="@dimen/margin_medium"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvImagePicker"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:id="@+id/tvFilePicker"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/MainTitle"
+                android:text="@string/file_picker"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:layout_marginStart="@dimen/margin_medium"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imagePicker"/>
+
+            <TextView
+                android:id="@+id/tvSelectedFile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/TextSecondary"
+                android:layout_margin="@dimen/margin_medium"
+                app:layout_constraintTop_toBottomOf="@+id/tvFilePicker"
+                tools:text="selected_file.pdf"/>
+
+            <com.averin.android.developer.baseui.widget.CustomButton
+                android:id="@+id/btnSelectFile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_medium"
+                app:cpbType="secondary"
+                app:cpbText="@string/select_file"
+                app:cpbIcon="@drawable/ic_attach"
+                app:layout_constraintTop_toBottomOf="@+id/tvSelectedFile"/>
+
+            <TextView
+                android:id="@+id/tvVideoPlayer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/MainTitle"
+                android:text="@string/video_player"
+                android:layout_marginTop="@dimen/margin_large"
+                android:layout_marginStart="@dimen/margin_medium"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnSelectFile"/>
+
+            <com.averin.android.developer.baseui.widget.CustomButton
+                android:id="@+id/btnOpenVideoPlayer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_medium"
+                app:cpbType="secondary"
+                app:cpbText="@string/play_video"
+                app:cpbIcon="@drawable/ic_play"
+                app:layout_constraintTop_toBottomOf="@+id/tvVideoPlayer"/>
+
+            <com.averin.android.developer.baseui.widget.LiveChartView
+                android:id="@+id/liveChartView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                app:layout_constraintTop_toBottomOf="@+id/btnOpenVideoPlayer"/>
+
+            <androidx.appcompat.widget.AppCompatSeekBar
+                android:id="@+id/appCompatSeekBar"
+                style="@style/CustomSeekBar"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:layout_marginStart="@dimen/margin_medium"
+                android:layout_marginEnd="@dimen/margin_medium"
+                android:max="10"
+                app:layout_constraintTop_toBottomOf="@+id/liveChartView" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

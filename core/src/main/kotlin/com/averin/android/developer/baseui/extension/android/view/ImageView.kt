@@ -11,6 +11,11 @@ import android.widget.ImageView
 import androidx.annotation.DrawableRes
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.core.view.isVisible
+import com.averin.android.developer.base.NO_VALUE_INT
+import com.averin.android.developer.baseui.util.GlideApp
+import com.averin.android.developer.baseui.util.GlideOptions.bitmapTransform
+import com.averin.android.developer.baseui.util.GlideRequest
+import com.averin.android.developer.core.R
 import com.bumptech.glide.load.DataSource
 import com.bumptech.glide.load.MultiTransformation
 import com.bumptech.glide.load.engine.DiskCacheStrategy
@@ -20,11 +25,6 @@ import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.bumptech.glide.request.RequestListener
 import com.bumptech.glide.request.RequestOptions
 import com.bumptech.glide.request.target.Target
-import com.averin.android.developer.base.NO_VALUE_INT
-import com.averin.android.developer.baseui.util.GlideApp
-import com.averin.android.developer.baseui.util.GlideOptions.bitmapTransform
-import com.averin.android.developer.baseui.util.GlideRequest
-import com.averin.android.developer.core.R
 import jp.wasabeef.glide.transformations.MaskTransformation
 
 fun ImageView.setNavigationIcon(id: Int) {

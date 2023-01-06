@@ -97,9 +97,8 @@ fun Long.toTimerFormat(): String {
 }
 
 //  "2016-03-24T14:22:28Z" Server date format
-val SERVER_DATE_FORMAT: DateTimeFormatter = DateTimeFormat.forPattern("YYYY-MM-ddTHH:mm:ssZ")
+val SERVER_DATE_FORMAT: DateTimeFormatter = DateTimeFormat.forPattern("YYYY-MM-dd'T'HH:mm:ssZ")
 //  "07 Sept 2021" UI date format
 val UI_DATE_FORMAT: DateTimeFormatter = DateTimeFormat.forPattern("dd.MM.YYYY")
-
 //  "02:23" left timer format
 val LEFT_TIMER_FORMAT: DateTimeFormatter = DateTimeFormat.forPattern("mm:ss")

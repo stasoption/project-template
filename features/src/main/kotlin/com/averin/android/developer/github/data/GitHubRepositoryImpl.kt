@@ -24,5 +24,4 @@ class GitHubRepositoryImpl(
     override suspend fun getProjects(): List<GitHubProject>? {
         return githubUserName?.let { api.getProjects(it) }
     }
-
 }

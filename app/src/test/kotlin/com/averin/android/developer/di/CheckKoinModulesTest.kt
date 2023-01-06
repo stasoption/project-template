@@ -10,11 +10,11 @@ import com.averin.android.developer.app.splash.splashModule
 import com.averin.android.developer.auth.authModule
 import com.averin.android.developer.base.baseModule
 import com.averin.android.developer.baseui.presentation.bottomsheet.webview.webViewModule
-import com.averin.android.developer.customview.customViewsModule
-import com.averin.android.developer.media.mediaModule
 import com.averin.android.developer.compose.composeModule
-import com.averin.android.developer.settings.settingsModule
+import com.averin.android.developer.customview.customViewsModule
 import com.averin.android.developer.github.gitHubProjectsModule
+import com.averin.android.developer.media.mediaModule
+import com.averin.android.developer.settings.settingsModule
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import org.junit.Rule
 import org.junit.Test

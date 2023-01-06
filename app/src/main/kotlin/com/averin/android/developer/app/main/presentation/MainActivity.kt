@@ -35,6 +35,7 @@ class MainActivity : AppCompatActivity(R.layout.ac_main) {
         }
     }
 
+    @Deprecated("Update to getInsets(int) with WindowInsetsCompat.Type.systemBars()")
     private fun setupInsets() {
         binding.mainView.doOnApplyWindowInsets { view, insets, _ ->
             val topInset = insets.systemWindowInsetTop

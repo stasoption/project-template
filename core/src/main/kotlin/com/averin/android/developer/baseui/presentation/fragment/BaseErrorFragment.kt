@@ -39,7 +39,6 @@ abstract class BaseErrorFragment(contentLayoutId: Int = 0) : BaseFragment(conten
             errorBinding.errorInfoView.titleView.text = t.message
             showErrorView()
         }
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -63,7 +62,6 @@ abstract class BaseErrorFragment(contentLayoutId: Int = 0) : BaseFragment(conten
         getErrorViews().forEach { it.visibility = View.VISIBLE }
         getContentViews().forEach { it.visibility = View.INVISIBLE }
     }
-
 
     protected open fun getErrorViews(): Array<View> = arrayOf(errorBinding.errorInfoView)
 

@@ -73,6 +73,7 @@
 
     <!-- Custom Views start -->
     <string name="custom_views">Custom Views</string>
+    <string name="toolbar_menu">Menu</string>
     <string name="example_menu_double_action">Double action dialog</string>
     <string name="example_menu_single_action">Single action dialog</string>
     <string name="example_menu_simple_dialog">Simple message dialog</string>
@@ -97,5 +98,6 @@
     <!-- Profile start -->
     <string name="menu_item_logout">Log out</string>
     <string name="ask_for_logout">Are you sure you want to log out?</string>
+    <string name="since_date">Since %s</string>
     <!-- Profile end -->
 </resources>

@@ -2,10 +2,10 @@ package com.averin.android.developer.app.main.navigation
 
 import androidx.fragment.app.Fragment
 import com.averin.android.developer.app.navigation.bottom.presentation.CustomBottomNavigationView
-import com.averin.android.developer.media.navigation.MediaFlowFragment
 import com.averin.android.developer.compose.navigation.ComposeFlowFragment
 import com.averin.android.developer.customview.navigation.CustomViewsFlowFragment
 import com.averin.android.developer.github.navigation.GitHubFlowFragment
+import com.averin.android.developer.media.navigation.MediaFlowFragment
 import com.averin.android.developer.settings.navigation.SettingsFlowFragment
 
 sealed class BottomTab(

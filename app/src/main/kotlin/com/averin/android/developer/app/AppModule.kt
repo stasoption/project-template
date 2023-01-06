@@ -22,7 +22,6 @@ val appModule = module {
                 adapters.forEach { adapter ->
                     add(adapter)
                 }
-
                 // You need to create adapters for all enums
                 //  add(CurrencyCode::class.java, EnumJsonAdapter.create(CurrencyCode::class.java)
                 //      .withUnknownFallback(CurrencyCode.USD))

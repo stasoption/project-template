@@ -62,7 +62,10 @@ class MenuFragment : BaseErrorFragment(R.layout.fr_menu) {
         binding.tvUserName.text = userInfo.name
         binding.tvUserEmail.textOrHide(userInfo.email)
         binding.tvUserLocation.textOrHide(userInfo.location)
-        binding.tvUserCreated.textOrHide(userInfo.createdAt.toUIFormat())
+        binding.tvUserCreated.text = getString(
+            R.string.since_date,
+            userInfo.createdAt.toUIFormat()
+        )
     }
 
     private fun onLogoutClick() {

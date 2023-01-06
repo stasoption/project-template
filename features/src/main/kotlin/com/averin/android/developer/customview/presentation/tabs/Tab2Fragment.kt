@@ -15,7 +15,6 @@ class Tab2Fragment : BaseFragment(R.layout.fr_tab_2) {
     private val binding by viewBinding(FrTab2Binding::bind)
     override val viewModel: BaseViewModel? = null
 
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 

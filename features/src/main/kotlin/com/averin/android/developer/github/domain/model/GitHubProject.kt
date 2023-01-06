@@ -6,7 +6,6 @@ import com.averin.android.developer.baseui.presentation.adapter.AdapterModel
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
-
 /*
 * [
   {
@@ -166,5 +165,4 @@ data class GitHubProject(
             return arrayOfNulls(size)
         }
     }
-
 }

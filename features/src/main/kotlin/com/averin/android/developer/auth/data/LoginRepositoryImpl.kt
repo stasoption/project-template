@@ -6,7 +6,6 @@ import com.averin.android.developer.auth.domain.LoginRepository
 import com.averin.android.developer.auth.domain.model.UserResponse
 import com.averin.android.developer.base.util.FlowPreferences
 import com.averin.android.developer.base.util.FlowPreferences.Companion.ARG_GITHUB_USER_NAME
-import com.averin.android.developer.core.BuildConfig.KEY_AUTH_LOGIN_TOKEN
 import com.averin.android.developer.core.BuildConfig.PREFERENCES_VERSION
 import com.squareup.moshi.Moshi
 

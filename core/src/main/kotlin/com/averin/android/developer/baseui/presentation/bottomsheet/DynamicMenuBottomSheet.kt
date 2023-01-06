@@ -7,8 +7,6 @@ import android.widget.TextView
 import androidx.core.view.isVisible
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.averin.android.developer.base.WITHOUT_MENU_ICON
-import com.averin.android.developer.baseui.extension.android.content.getColorKtx
-import com.averin.android.developer.baseui.extension.android.view.setDrawableTintColor
 import com.averin.android.developer.baseui.extension.androidx.fragment.app.getDrawable
 import com.averin.android.developer.core.R
 import com.averin.android.developer.core.databinding.FrMultiselectMenuBinding

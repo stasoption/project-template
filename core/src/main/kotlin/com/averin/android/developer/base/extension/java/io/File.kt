@@ -16,23 +16,15 @@ import android.webkit.MimeTypeMap
 import androidx.appcompat.app.AppCompatActivity
 import androidx.exifinterface.media.ExifInterface
 import com.averin.android.developer.base.extension.kotlin.removeNoDigits
-import com.averin.android.developer.base.util.CustomFileProvider
 import com.averin.android.developer.base.util.CountingRequestBody
+import com.averin.android.developer.base.util.CustomFileProvider
 import com.averin.android.developer.baseui.widget.imagepicker.ImagePreviewBottomSheet
 import com.averin.android.developer.core.BuildConfig
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.RequestBody
 import okhttp3.RequestBody.Companion.toRequestBody
 import timber.log.Timber
-import java.io.BufferedInputStream
-import java.io.BufferedOutputStream
-import java.io.File
-import java.io.FileInputStream
-import java.io.FileNotFoundException
-import java.io.FileOutputStream
-import java.io.IOException
-import java.io.InputStream
-import java.io.OutputStream
+import java.io.*
 import java.net.URLDecoder
 import java.text.DecimalFormat
 

@@ -30,6 +30,16 @@ class LiveChartView(context: Context, attrs: AttributeSet) : FrameLayout(context
     private var textColorX: Int = Color.BLACK
     private var textColorY: Int = Color.BLACK
 
+    private val chartColors = listOf(
+        Color.parseColor("#CC9D00"),
+        Color.parseColor("#AB73F4"),
+        Color.parseColor("#4690FF"),
+        Color.parseColor("#5BC16F"),
+        Color.parseColor("#4EB8EE"),
+        Color.parseColor("#FF9339"),
+        Color.parseColor("#FB5C76")
+    )
+
     init {
         View.inflate(context, R.layout.w_live_chart, this)
         val array = context.theme.obtainStyledAttributes(attrs, R.styleable.CandidateEmotionsChart, 0, 0)
@@ -123,15 +133,5 @@ class LiveChartView(context: Context, attrs: AttributeSet) : FrameLayout(context
     class ChartFeed(
         val title: String,
         val value: Float
-    )
-
-    val chartColors = listOf(
-        Color.parseColor("#CC9D00"),
-        Color.parseColor("#AB73F4"),
-        Color.parseColor("#4690FF"),
-        Color.parseColor("#5BC16F"),
-        Color.parseColor("#4EB8EE"),
-        Color.parseColor("#FF9339"),
-        Color.parseColor("#FB5C76")
     )
 }

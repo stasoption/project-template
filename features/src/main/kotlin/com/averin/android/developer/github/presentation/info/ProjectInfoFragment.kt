@@ -6,13 +6,10 @@ import androidx.navigation.fragment.navArgs
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.averin.android.developer.base.util.RequestCodeGenerator
 import com.averin.android.developer.baseui.extension.androidx.fragment.app.onBackPressed
-import com.averin.android.developer.baseui.extension.androidx.lifecycle.observeSafe
 import com.averin.android.developer.baseui.presentation.BaseViewModel
-import com.averin.android.developer.baseui.presentation.fragment.BaseErrorFragment
 import com.averin.android.developer.baseui.presentation.fragment.BaseFragment
 import com.averin.android.developer.dashboard.R
 import com.averin.android.developer.dashboard.databinding.FrGithubProjectInfoBinding
-import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class ProjectInfoFragment : BaseFragment(R.layout.fr_github_project_info) {
 

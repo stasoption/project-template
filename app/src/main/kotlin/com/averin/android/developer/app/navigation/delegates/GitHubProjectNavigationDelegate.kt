@@ -2,8 +2,8 @@ package com.averin.android.developer.app.navigation.delegates
 
 import com.averin.android.developer.dashboard.ProjectsGraphDirections
 import com.averin.android.developer.github.domain.model.GitHubProject
-import com.averin.android.developer.github.navigation.GitHubProjectNavControllerStorage
 import com.averin.android.developer.github.navigation.GitHubNavigation
+import com.averin.android.developer.github.navigation.GitHubProjectNavControllerStorage
 
 class GitHubProjectNavigationDelegate(
     private val navControllerStorage: GitHubProjectNavControllerStorage

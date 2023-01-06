@@ -26,6 +26,7 @@ class Tab1Fragment : BaseFragment(R.layout.fr_tab_1) {
            * ExpandedTextView
            * */
             expandedTextView.text = getString(R.string.template_long_text)
+
             /*
             * InputView
             * */
