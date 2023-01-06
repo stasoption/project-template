@@ -86,6 +86,8 @@
     <!-- Custom Views end -->
 
     <!-- Media start -->
+    <string name="media_title">Media and files</string>
+    <string name="image_picker">Image picker</string>
     <string name="time_sec_left">%s sec left</string>
     <string name="time_left">%s left</string>
     <string name="file_has_been_downloading">File has been downloading…</string>

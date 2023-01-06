@@ -7,7 +7,6 @@ import android.widget.SeekBar
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.averin.android.developer.baseui.extension.android.content.showToast
 import com.averin.android.developer.baseui.extension.androidx.fragment.app.hideKeyBoard
-import com.averin.android.developer.baseui.extension.androidx.fragment.app.supportFragmentManager
 import com.averin.android.developer.baseui.presentation.BaseViewModel
 import com.averin.android.developer.baseui.presentation.fragment.BaseFragment
 import com.averin.android.developer.baseui.widget.CustomSegmentedView
@@ -15,7 +14,6 @@ import com.averin.android.developer.baseui.widget.CustomToggleView
 import com.averin.android.developer.baseui.widget.tag.Tag
 import com.averin.android.developer.dashboard.R
 import com.averin.android.developer.dashboard.databinding.FrTab3Binding
-import java.io.File
 
 class Tab3Fragment : BaseFragment(R.layout.fr_tab_3) {
 

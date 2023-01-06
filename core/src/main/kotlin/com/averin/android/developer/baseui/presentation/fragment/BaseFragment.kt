@@ -16,13 +16,13 @@ abstract class BaseFragment(contentLayoutId: Int = 0) : Fragment(contentLayoutId
 
     abstract val viewModel: BaseViewModel?
 
-    private val galleryPermissionResult = registerForActivityResult(ActivityResultContracts.RequestMultiplePermissions()) { permissions ->
+    protected val galleryPermissionResult = registerForActivityResult(ActivityResultContracts.RequestMultiplePermissions()) { permissions ->
         if (permissions.entries.map { it.value }.all { it }) {
             requireActivity().pickFileByIntent("image/*", photoFromGalleryLauncher)
         }
     }
 
-    private var photoFromGalleryLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+    protected var photoFromGalleryLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
         val resultPath = result.data?.data?.getFilePath(requireActivity())
         onImageSelected(resultPath)
     }

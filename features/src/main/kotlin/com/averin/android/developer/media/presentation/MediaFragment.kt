@@ -21,34 +21,34 @@ class MediaFragment : BaseFragment(R.layout.fr_media) {
     private val navigation: MediaNavigation by inject()
     override val viewModel: BaseViewModel? = null
 
-//    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-//        super.onViewCreated(view, savedInstanceState)
-//        binding.run {
-//            imagePicker.apply {
-//                requiredFragmentManager = supportFragmentManager()
-//                onPickImageClickAction = { chooseImageFromGallery() }
-//                imagePicker.onRemoveImageClickAction = { removePhoto() }
-//            }
-//        }
-//    }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.run {
+            imagePicker.apply {
+                requiredFragmentManager = supportFragmentManager()
+                onPickImageClickAction = { chooseImageFromGallery() }
+                imagePicker.onRemoveImageClickAction = { removeImage() }
+            }
+        }
+    }
 
-//    override fun onImageSelected(imagePath: String?) {
-//        imagePath?.let { path ->
-//            val file = File(path)
-//            // Send the file to a Server, save to viewModel etc
-//            binding.imagePicker.imageUri = Uri.fromFile(file)
-//        }
-//    }
-//
-//    protected fun chooseImageFromGallery() {
-//        if (!isGranted(requireActivity(), FilePickerConst.PERMISSIONS_FILE_PICKER)) {
-//            galleryPermissionResult.launch(FilePickerConst.PERMISSIONS_FILE_PICKER)
-//        } else {
-//            requireActivity().pickFileByIntent("image/*", photoFromGalleryLauncher)
-//        }
-//    }
-//
-//    private fun removeImage() {
-//        // Remove from viewModel, Server etc
-//    }
+    override fun onImageSelected(imagePath: String?) {
+        imagePath?.let { path ->
+            val file = File(path)
+            // Send the file to a Server, save to viewModel etc
+            binding.imagePicker.imageUri = Uri.fromFile(file)
+        }
+    }
+
+    protected fun chooseImageFromGallery() {
+        if (!isGranted(requireActivity(), FilePickerConst.PERMISSIONS_FILE_PICKER)) {
+            galleryPermissionResult.launch(FilePickerConst.PERMISSIONS_FILE_PICKER)
+        } else {
+            requireActivity().pickFileByIntent("image/*", photoFromGalleryLauncher)
+        }
+    }
+
+    private fun removeImage() {
+        // Remove from viewModel, Server etc
+    }
 }
