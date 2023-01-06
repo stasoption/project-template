@@ -11,13 +11,11 @@
     <color name="hintColor">@color/typography_placeholder</color>
 
     <color name="textToolbar">@color/textColorPrimary</color>
-
     <color name="window_background">@color/white</color>
     <color name="view_background">#F4F7F7</color>
     <color name="dialogBackground">#80F2F6F5</color>
 
     <color name="transparent_highlight">#80C4C6D0</color>
-
     <color name="primary_blur">#D2EED7</color>
     <color name="white">#FFFFFF</color>
     <color name="beige">#F4F7F7</color>
@@ -36,6 +34,11 @@
     <color name="typography_body">#3E3E3E</color>
     <color name="typography_body_50">#803E3E3E</color>
     <color name="secondary_dark_green">#E8F6EB</color>
+
+    <!-- tabs start -->
+    <color name="tab_default_color">@color/textColorPrimary</color>
+    <color name="tab_selected_color">@color/colorPrimary</color>
+    <!-- tabs end -->
 
     <!-- background gradient start -->
     <color name="start_background_gradient_color">#DDEFE2</color>

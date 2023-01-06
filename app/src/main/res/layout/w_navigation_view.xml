@@ -28,7 +28,7 @@
             <ImageView
                 android:id="@+id/ivIcon1"
                 style="@style/NavigationIcon"
-                tools:src="@drawable/ic_tab_vacancy_selected"/>
+                tools:src="@drawable/ic_projects_default"/>
             <TextView
                 android:id="@+id/tvTitle1"
                 style="@style/NavigationTextView"
@@ -46,11 +46,11 @@
             <ImageView
                 android:id="@+id/ivIcon2"
                 style="@style/NavigationIcon"
-                tools:src="@drawable/ic_tab_candidates_default"/>
+                tools:src="@drawable/ic_widgets_default"/>
             <TextView
                 android:id="@+id/tvTitle2"
                 style="@style/NavigationTextView"
-                tools:text="@string/tab_candidates"/>
+                tools:text="@string/tab_widgets"/>
         </LinearLayout>
 
         <LinearLayout
@@ -64,11 +64,11 @@
             <ImageView
                 android:id="@+id/ivIcon3"
                 style="@style/NavigationIcon"
-                tools:src="@drawable/ic_tab_feed_default"/>
+                tools:src="@drawable/ic_compose_default"/>
             <TextView
                 android:id="@+id/tvTitle3"
                 style="@style/NavigationTextView"
-                tools:text="@string/tab_feed"/>
+                tools:text="@string/tab_compose"/>
         </LinearLayout>
 
         <LinearLayout
@@ -82,12 +82,12 @@
             <ImageView
                 android:id="@+id/ivIcon4"
                 style="@style/NavigationIcon"
-                tools:src="@drawable/ic_tab_unread_default"
+                tools:src="@drawable/ic_media_default"
                 tools:ignore="ContentDescription" />
             <TextView
                 android:id="@+id/tvTitle4"
                 style="@style/NavigationTextView"
-                tools:text="@string/tab_chats"/>
+                tools:text="@string/tab_media"/>
         </LinearLayout>
 
         <LinearLayout
@@ -100,7 +100,7 @@
             <ImageView
                 android:id="@+id/ivIcon5"
                 style="@style/NavigationIcon"
-                tools:src="@drawable/ic_tab_more_default"/>
+                tools:src="@drawable/ic_profile_default"/>
             <TextView
                 android:id="@+id/tvTitle5"
                 style="@style/NavigationTextView"

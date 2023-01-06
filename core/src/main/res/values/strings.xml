@@ -64,9 +64,9 @@
     <!-- navigation panel start -->
     <string name="tab_projects">Projects</string>
     <string name="tab_widgets">Widgets</string>
-    <string name="tab_compouse">Compouse</string>
-    <string name="tab_4">Empty</string>
-    <string name="tab_menu">More</string>
+    <string name="tab_compose">Compose</string>
+    <string name="tab_media">Media</string>
+    <string name="tab_menu">Profile</string>
     <!-- navigation panel end -->
 
     <!-- Login start -->

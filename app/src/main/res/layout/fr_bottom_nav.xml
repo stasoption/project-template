@@ -19,15 +19,15 @@
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_gravity="bottom"
-        app:navIcon1="@drawable/ic_tab_vacancy_default"
+        app:navIcon1="@drawable/ic_projects_default"
         app:navTitle1="@string/tab_projects"
-        app:navIcon2="@drawable/ic_tab_candidates_default"
+        app:navIcon2="@drawable/ic_widgets_default"
         app:navTitle2="@string/tab_widgets"
-        app:navIcon3="@drawable/ic_tab_feed_default"
-        app:navTitle3="@string/tab_compouse"
-        app:navIcon4="@drawable/ic_tab_chat_default"
-        app:navTitle4="@string/tab_4"
-        app:navIcon5="@drawable/ic_tab_more_default"
+        app:navIcon3="@drawable/ic_compose_default"
+        app:navTitle3="@string/tab_compose"
+        app:navIcon4="@drawable/ic_media_default"
+        app:navTitle4="@string/tab_media"
+        app:navIcon5="@drawable/ic_profile_default"
         app:navTitle5="@string/tab_menu"/>
 
     <include

@@ -139,45 +139,37 @@ class CustomBottomNavigationView(context: Context, attrs: AttributeSet) : FrameL
             return when (this.bottomTab.menuId) {
                 TAB_1 -> {
                     if (isSelected) {
-                        R.drawable.ic_tab_vacancy_selected
+                        R.drawable.ic_projects_selected
                     } else {
-                        R.drawable.ic_tab_vacancy_default
+                        R.drawable.ic_projects_default
                     }
                 }
                 TAB_2 -> {
                     if (isSelected) {
-                        R.drawable.ic_tab_candidates_selected
+                        R.drawable.ic_widgets_selected
                     } else {
-                        R.drawable.ic_tab_candidates_default
+                        R.drawable.ic_widgets_default
                     }
                 }
                 TAB_3 -> {
                     if (isSelected) {
-                        R.drawable.ic_tab_feed_selected
+                        R.drawable.ic_compose_selected
                     } else {
-                        R.drawable.ic_tab_feed_default
+                        R.drawable.ic_compose_default
                     }
                 }
                 TAB_4 -> {
                     if (isSelected) {
-                        if (notificationCount > 0) {
-                            R.drawable.ic_tab_unread_selected
-                        } else {
-                            R.drawable.ic_tab_chat_selected
-                        }
+                        R.drawable.ic_media_selected
                     } else {
-                        if (notificationCount > 0) {
-                            R.drawable.ic_tab_unread_default
-                        } else {
-                            R.drawable.ic_tab_chat_default
-                        }
+                        R.drawable.ic_media_default
                     }
                 }
                 TAB_5 -> {
                     if (isSelected) {
-                        R.drawable.ic_tab_more_selected
+                        R.drawable.ic_profile_selected
                     } else {
-                        R.drawable.ic_tab_more_default
+                        R.drawable.ic_profile_default
                     }
                 }
                 else -> throw IllegalArgumentException("bottomTabId=${this.bottomTab.menuId}")
