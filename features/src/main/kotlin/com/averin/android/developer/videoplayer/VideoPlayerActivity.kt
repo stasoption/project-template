@@ -196,7 +196,7 @@ class VideoPlayerActivity : AppCompatActivity(R.layout.ac_video_player), Player.
     companion object {
         const val KEY_START_POSITION = "KEY_START_POSITION"
         const val VIDEO_URL_EXTRA = "VIDEO_URL_EXTRA"
-        fun makeIntent(context: Context, videoUrl: Int) = Intent(context, VideoPlayerActivity::class.java).apply {
+        fun makeIntent(context: Context, videoUrl: String) = Intent(context, VideoPlayerActivity::class.java).apply {
             putExtra(VIDEO_URL_EXTRA, videoUrl)
         }
     }

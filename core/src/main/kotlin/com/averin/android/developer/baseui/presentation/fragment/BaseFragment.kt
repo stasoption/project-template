@@ -57,11 +57,19 @@ abstract class BaseFragment(contentLayoutId: Int = 0) : Fragment(contentLayoutId
         requireActivity().setNavigationPanelVisible(isFragmentWithNavigationPanel)
     }
 
-    protected fun chooseImageFileFromSystem() {
+    protected fun chooseFileFromStorage() {
         if (!isGranted(requireActivity(), FilePickerConst.PERMISSIONS_FILE_PICKER)) {
             fileSystemPermissionResult.launch(FilePickerConst.PERMISSIONS_FILE_PICKER)
         } else {
             requireActivity().pickFileByIntent("*/*", fileFromSystemLauncher)
+        }
+    }
+
+    protected fun chooseImageFromGallery() {
+        if (!isGranted(requireActivity(), FilePickerConst.PERMISSIONS_FILE_PICKER)) {
+            galleryPermissionResult.launch(FilePickerConst.PERMISSIONS_FILE_PICKER)
+        } else {
+            requireActivity().pickFileByIntent("image/*", photoFromGalleryLauncher)
         }
     }
 }

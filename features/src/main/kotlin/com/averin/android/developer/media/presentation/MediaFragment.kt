@@ -4,16 +4,15 @@ import android.net.Uri
 import android.os.Bundle
 import android.view.View
 import by.kirich1409.viewbindingdelegate.viewBinding
-import com.averin.android.developer.base.util.FilePickerConst
-import com.averin.android.developer.base.util.isGranted
-import com.averin.android.developer.baseui.extension.android.app.pickFileByIntent
 import com.averin.android.developer.baseui.extension.androidx.fragment.app.supportFragmentManager
 import com.averin.android.developer.baseui.presentation.BaseViewModel
 import com.averin.android.developer.baseui.presentation.fragment.BaseFragment
 import com.averin.android.developer.media.navigation.MediaNavigation
 import com.averin.android.developer.dashboard.R
 import com.averin.android.developer.dashboard.databinding.FrMediaBinding
+import com.averin.android.developer.videoplayer.VideoPlayerActivity
 import org.koin.android.ext.android.inject
+import timber.log.Timber
 import java.io.File
 
 class MediaFragment : BaseFragment(R.layout.fr_media) {
@@ -29,26 +28,37 @@ class MediaFragment : BaseFragment(R.layout.fr_media) {
                 onPickImageClickAction = { chooseImageFromGallery() }
                 imagePicker.onRemoveImageClickAction = { removeImage() }
             }
+
+            btnSelectFile.onClickListener = {
+                chooseFileFromStorage()
+            }
+
+            btnOpenVideoPlayer.onClickListener = {
+                val intent = VideoPlayerActivity.makeIntent(requireActivity(), TEST_VIDEO_URL)
+                startActivity(intent)
+            }
         }
     }
 
     override fun onImageSelected(imagePath: String?) {
         imagePath?.let { path ->
             val file = File(path)
-            // Send the file to a Server, save to viewModel etc
             binding.imagePicker.imageUri = Uri.fromFile(file)
         }
     }
 
-    protected fun chooseImageFromGallery() {
-        if (!isGranted(requireActivity(), FilePickerConst.PERMISSIONS_FILE_PICKER)) {
-            galleryPermissionResult.launch(FilePickerConst.PERMISSIONS_FILE_PICKER)
-        } else {
-            requireActivity().pickFileByIntent("image/*", photoFromGalleryLauncher)
+    override fun onFileSelected(filePath: String?) {
+        filePath?.let { path ->
+            val file = File(path)
+            binding.tvSelectedFile.text = file.name
         }
     }
 
     private fun removeImage() {
         // Remove from viewModel, Server etc
+    }
+
+    companion object {
+        private const val TEST_VIDEO_URL = "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
     }
 }
