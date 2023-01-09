@@ -321,6 +321,6 @@
         <item name="android:textSize">@dimen/text_12</item>
         <item name="android:gravity">center</item>
         <item name="android:focusable">true</item>
-        <item name="android:focusableInTouchMode">true</item>
+        <item name="android:clickable">true</item>
     </style>
 </resources>

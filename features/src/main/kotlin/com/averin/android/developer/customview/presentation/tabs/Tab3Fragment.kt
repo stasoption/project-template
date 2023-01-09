@@ -95,11 +95,11 @@ class Tab3Fragment : BaseFragment(R.layout.fr_tab_3) {
             appCompatSeekBar.apply {
                 max = stepNumber - 1
                 setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
-                    override fun onProgressChanged(seekBar: SeekBar, progress: Int, fromUser: Boolean) { }
-                    override fun onStartTrackingTouch(seekBar: SeekBar) { }
-                    override fun onStopTrackingTouch(seekBar: SeekBar) {
-                        stepCounter.currentStep = seekBar.progress
+                    override fun onProgressChanged(seekBar: SeekBar, progress: Int, fromUser: Boolean) {
+                        stepCounter.currentStep = progress
                     }
+                    override fun onStartTrackingTouch(seekBar: SeekBar) { }
+                    override fun onStopTrackingTouch(seekBar: SeekBar) { }
                 })
             }
         }

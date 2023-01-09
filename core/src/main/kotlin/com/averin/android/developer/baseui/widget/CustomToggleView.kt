@@ -25,24 +25,6 @@ class CustomToggleView(context: Context, attrs: AttributeSet?) : FrameLayout(con
     private val rightBtnView: TextView by lazy { binding.tvRightBtn }
 
     var onClickListener: ((Button) -> Unit)? = null
-        set(value) {
-            field = value
-            leftBtnView.onFocusChangeListener = OnFocusChangeListener { _, hasFocus ->
-                if (hasFocus) {
-                    switchToggle(Button.LEFT)
-                }
-            }
-            centralBtnView.onFocusChangeListener = OnFocusChangeListener { _, hasFocus ->
-                if (hasFocus) {
-                    switchToggle(Button.CENTRAL)
-                }
-            }
-            rightBtnView.onFocusChangeListener = OnFocusChangeListener { _, hasFocus ->
-                if (hasFocus) {
-                    switchToggle(Button.RIGHT)
-                }
-            }
-        }
 
     var currentToggle: Button = Button.LEFT
         set(value) {
@@ -65,9 +47,9 @@ class CustomToggleView(context: Context, attrs: AttributeSet?) : FrameLayout(con
             rightBtnView.text = rightText
             rightBtnView.isVisible = !rightText.isNullOrEmpty()
 
-            leftBtnView.setOnClickListener { }
-            centralBtnView.setOnClickListener { }
-            rightBtnView.setOnClickListener { }
+            leftBtnView.setOnClickListener { switchToggle(Button.LEFT) }
+            centralBtnView.setOnClickListener { switchToggle(Button.CENTRAL) }
+            rightBtnView.setOnClickListener { switchToggle(Button.RIGHT) }
         } finally {
             typedArray.recycle()
         }
