@@ -6,7 +6,6 @@ import android.view.View
 import android.widget.TextView
 import androidx.core.view.isVisible
 import by.kirich1409.viewbindingdelegate.viewBinding
-import com.averin.android.developer.base.WITHOUT_MENU_ICON
 import com.averin.android.developer.baseui.extension.androidx.fragment.app.getDrawable
 import com.averin.android.developer.core.R
 import com.averin.android.developer.core.databinding.FrMultiselectMenuBinding
@@ -41,7 +40,7 @@ class DynamicMenuBottomSheet : BaseBottomSheetDialog() {
                     item.onClickListener.invoke()
                     dismissAllowingStateLoss()
                 }
-                val iconRes = if (item.iconRes != WITHOUT_MENU_ICON) {
+                val iconRes = if (item.iconRes != null) {
                     getDrawable(item.iconRes)
                 } else {
                     null
@@ -54,7 +53,7 @@ class DynamicMenuBottomSheet : BaseBottomSheetDialog() {
 
     class MenuItem(
         val titleRes: Int,
-        val iconRes: Int,
+        val iconRes: Int? = null,
         var onClickListener: (() -> Unit)
     )
 

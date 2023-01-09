@@ -87,14 +87,12 @@ class CustomViewsFragment : BaseFragment(R.layout.fr_custom_views) {
                     showSimpleDialog()
                 },
                 DynamicMenuBottomSheet.MenuItem(
-                    R.string.example_menu_warning_dialog,
-                    R.drawable.ic_debug_placeholder
+                    R.string.example_menu_warning_dialog
                 ) {
                     showWarningDialog()
                 },
                 DynamicMenuBottomSheet.MenuItem(
-                    R.string.example_menu_full_screen_message,
-                    R.drawable.ic_debug_placeholder
+                    R.string.example_menu_full_screen_message
                 ) {
                     showMessageOnFullScreenDialog()
                 }
