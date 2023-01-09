@@ -9,7 +9,7 @@ class LoginViewModel(private val loginInteractor: LoginInteractor) : BaseViewMod
 
     var email: String = ""
     val userResponseLiveData = SingleLiveEvent<UserResponse>()
-    val loginWithoutLoginEvent = SingleLiveEvent<Nothing>()
+    val loginWithoutMyUserNameEvent = SingleLiveEvent<Nothing>()
 
     fun loadProfile() = launchLoadingErrorJob {
         val userResponse = loginInteractor.loadProfile(email)
@@ -19,7 +19,7 @@ class LoginViewModel(private val loginInteractor: LoginInteractor) : BaseViewMod
 
     fun loginWithMyPersonalUserName() {
         loginInteractor.gitHubUserName = MY_USER_NAME
-        loginWithoutLoginEvent.call()
+        loginWithoutMyUserNameEvent.call()
     }
 
     companion object {

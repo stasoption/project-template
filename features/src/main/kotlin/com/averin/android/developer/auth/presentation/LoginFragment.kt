@@ -21,7 +21,6 @@ class LoginFragment : BaseErrorFragment(R.layout.fr_login) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         binding.run {
             etUserName.init { userName -> viewModel.email = userName }
             loginBtn.onClickListener = {
@@ -40,7 +39,7 @@ class LoginFragment : BaseErrorFragment(R.layout.fr_login) {
         viewModel.userResponseLiveData.observeSafe(viewLifecycleOwner) {
             navigation.openDashboard()
         }
-        viewModel.loginWithoutLoginEvent.observe(viewLifecycleOwner) {
+        viewModel.loginWithoutMyUserNameEvent.observe(viewLifecycleOwner) {
             navigation.openDashboard()
         }
     }
