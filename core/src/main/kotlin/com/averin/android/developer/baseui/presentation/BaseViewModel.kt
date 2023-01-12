@@ -25,7 +25,7 @@ open class BaseViewModel : ViewModel() {
         }
     }
 
-    protected fun launchLoadingErrorJob(
+    protected fun launchJob(
         error: MutableLiveData<Throwable?>? = this.error,
         loading: MutableLiveData<Boolean>? = this.loading,
         onError: ((Throwable) -> Unit)? = null,
@@ -42,7 +42,7 @@ open class BaseViewModel : ViewModel() {
         }
     }
 
-    protected fun <T> asyncError(
+    protected fun <T> deferredAsync(
         error: MutableLiveData<Throwable?>? = this.error,
         onError: ((Throwable) -> Unit)? = null,
         block: suspend () -> T

@@ -11,7 +11,7 @@ class LoginViewModel(private val loginInteractor: LoginInteractor) : BaseViewMod
     val userResponseLiveData = SingleLiveEvent<UserResponse>()
     val loginWithoutMyUserNameEvent = SingleLiveEvent<Nothing>()
 
-    fun loadProfile() = launchLoadingErrorJob {
+    fun loadProfile() = launchJob {
         val userResponse = loginInteractor.loadProfile(email)
         loginInteractor.gitHubUserName = userResponse.login
         userResponseLiveData.value = userResponse

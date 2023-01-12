@@ -10,7 +10,7 @@ class ProjectsViewModel(private val interactor: GitHubInteractor) : BaseViewMode
     val projectsLiveData = SingleLiveEvent<List<GitHubProject>>()
     var projects: List<GitHubProject> = arrayListOf()
 
-    fun getProjects() = launchLoadingErrorJob {
+    fun getProjects() = launchJob {
         if (projects.isNotEmpty()) {
             projectsLiveData.value = projects
         }

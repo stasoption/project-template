@@ -12,11 +12,11 @@ class MenuViewModel(
     val getUserInfoEvent = SingleLiveEvent<UserResponse?>()
     val logoutSuccessEvent = SingleLiveEvent<Boolean>()
 
-    fun getUserInfo() = launchLoadingErrorJob {
+    fun getUserInfo() = launchJob {
         getUserInfoEvent.value = interactor.loadProfile()
     }
 
-    fun logout() = launchLoadingErrorJob {
+    fun logout() = launchJob {
         interactor.githubUserName = null
         logoutSuccessEvent.value = interactor.githubUserName == null
     }
